@@ -3,5 +3,7 @@
     "*.js",
     "libraries/*.js",
     "c:\\Users\\1006009372\\.vscode\\extensions\\samplavigne.p5-vscode-1.2.8\\p5types\\global.d.ts"
-  ]
+, "src/sketch.js",
+  "src/player.js",
+  "src/student.js" ]
 }
