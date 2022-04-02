@@ -15,6 +15,12 @@ class Student{
     callTeacher(){
         fill(255);
         rect(this.posX-100, this.posY-50, 90, 40);
+
+        //TODO: find out how to do the interval for teacher calling
+
+        let randomTimeInterval = Math.floor(Math.random() * (20 - 10 + 1) + 10);
+
+        setTimeout(student1.callTeacher, randomTimeInterval * 1000);
     }
 
 }
