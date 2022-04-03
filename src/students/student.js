@@ -5,6 +5,8 @@ class Student{
         this.posX = posX;
         this.posY = posY;
 
+        this.intervalId;
+
     }
 
     paint(){
@@ -14,9 +16,20 @@ class Student{
 
     callTeacher(){
 
-        fill(0);
+        this.intervalId = window.setInterval((e) => {
 
-        rect(307, 52, 680, 350);
+            fill(0);
+            rect(this.posX - 150, this.posY - 75, 150, 50);
+
+        }, 3000);
+
+        /*rect(307, 52, 680, 350);*/
+
+    }
+
+    stopCallingTeacher(){
+        
+        clearInterval(this.intervalId);
 
     }
 
