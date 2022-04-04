@@ -2,7 +2,7 @@ let student1;
 
 let bg;
 
-let newTimer;
+let timerValue, timerValueMinutes;
 
 function preload(){
   
@@ -18,8 +18,10 @@ function setup() {
   student3 = new Student3(1147, 77);
   student4 = new Student4(1147, 360);
 
-  newTimer = new Timer(0, 3);
-  setInterval(timeIt() , 1000);
+  timerValue = 0;
+  timerValueMinutes = 3;
+
+  setInterval(timeIt , 1000);
 }
 
 function draw() {
@@ -33,20 +35,40 @@ function draw() {
   student3.paint();
   student4.paint();
 
-  newTimer.timer();
-
+  timer();
   endGame();
+
+}
+
+function timer()
+{
+	textSize(30);
+	textAlign(CENTER);
+
+	if(timerValue >= 10)
+	{
+		text(timerValueMinutes + ":" + timerValue, 145, 660);
+	}
+	if(timerValue < 10)
+	{
+		text(timerValueMinutes + ":0" + timerValue, 145, 660);
+	}
+	if(timerValue < 0)
+	{
+		timerValue = 59;
+		timerValueMinutes -= 1;
+	}
 
 }
 
 function timeIt()
 {
-    newTimer.timerValue -= 1
+	timerValue -= 1;
 }
 
 function endGame(){
   
-  if(newTimer.timerValue == 0 && newTimer.timerValueMinutes == 0){
+  if(timerValue == 0 && timerValueMinutes == 0){
 
     alert("Juego terminado");
 
