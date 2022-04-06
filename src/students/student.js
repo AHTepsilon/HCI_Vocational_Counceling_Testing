@@ -22,10 +22,13 @@ class Student{
 
         this.intervalId = window.setInterval((e) => {
 
-            if(this.calledTeacher){}
+            if(this.calledTeacher){
+                fill(0);
+                rect(this.posX - 150, this.posY - 75, 150, 50);
+            }
 
 
-        }, Math.floor(Math.random() * 2000 + 10000) - 2000);
+        }, 3000);
 
 
     }

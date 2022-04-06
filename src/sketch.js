@@ -89,11 +89,6 @@ function endGame(){
 function mousePressed() {
   console.log("Click");
 
-    student1.callTeacher();
-    student2.callTeacher();
-    student3.callTeacher();
-    student4.callTeacher();
-
     if(dist(mouseX, mouseY, student1.posX - 75, student1.posY - 35) < 30){
 
       console.log("student 1 clicked");
