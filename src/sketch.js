@@ -8,7 +8,7 @@ let gameCanvas;
 
 function preload(){
   
-  bg = loadImage('./img/DEBUG_background.png');
+  bg = loadImage('./img/PLACEHOLDER_bg.png');
 
 }
 
@@ -26,7 +26,7 @@ function setup() {
   timerValue = 0;
   timerValueMinutes = 3;
 
-  setInterval(timeIt , 1000);
+  setInterval(timeIt, 1000);
 }
 
 function draw() {

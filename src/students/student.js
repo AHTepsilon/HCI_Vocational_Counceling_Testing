@@ -22,6 +22,7 @@ class Student{
 
         this.intervalId = window.setInterval((e) => {
 
+            if(this.calledTeacher){}
 
 
         }, Math.floor(Math.random() * 2000 + 10000) - 2000);
