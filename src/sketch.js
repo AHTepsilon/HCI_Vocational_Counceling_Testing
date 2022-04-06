@@ -88,8 +88,6 @@ function mousePressed() {
 
       console.log("student 1 clicked");
 
-      student1.stopCallingTeacher();
-
     }
 
     if(dist(mouseX, mouseY, student2.posX - 75, student2.posY - 35) < 30){
