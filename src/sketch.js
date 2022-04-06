@@ -4,6 +4,8 @@ let bg;
 
 let timerValue, timerValueMinutes;
 
+let gameCanvas;
+
 function preload(){
   
   bg = loadImage('./img/DEBUG_background.png');
@@ -11,7 +13,10 @@ function preload(){
 }
 
 function setup() {
-  createCanvas(1280, 720);
+
+  gameCanvas = createCanvas(1280, 720);
+
+  gameCanvas.parent("gameContainer");
 
   student1 = new Student1(161, 77);
   student2 = new Student2(161, 360);
@@ -37,6 +42,11 @@ function draw() {
 
   timer();
   endGame();
+
+  student1.callTeacher();
+  student2.callTeacher();
+  student3.callTeacher();
+  student4.callTeacher();
 
 }
 
