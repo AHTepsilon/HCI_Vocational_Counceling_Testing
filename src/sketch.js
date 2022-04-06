@@ -1,4 +1,4 @@
-let student1;
+let students;
 
 let bg;
 
@@ -15,6 +15,8 @@ function preload(){
 function setup() {
 
   gameCanvas = createCanvas(1280, 720);
+
+  students = [];
 
   gameCanvas.parent("gameContainer");
 
@@ -35,18 +37,12 @@ function draw() {
   background(255);
   image(bg, 0, 0);
 
-  student1.paint();
-  student2.paint();
-  student3.paint();
-  student4.paint();
+  students.forEach(student =>{
+    student.paint();
+  });
 
   timer();
   endGame();
-
-  student1.callTeacher();
-  student2.callTeacher();
-  student3.callTeacher();
-  student4.callTeacher();
 
 }
 
@@ -87,31 +83,7 @@ function endGame(){
 }
 
 function mousePressed() {
-  console.log("Click");
 
-    if(dist(mouseX, mouseY, student1.posX - 75, student1.posY - 35) < 30){
-
-      console.log("student 1 clicked");
-
-    }
-
-    if(dist(mouseX, mouseY, student2.posX - 75, student2.posY - 35) < 30){
-
-      console.log("student 2 clicked");
-
-    }
-    
-    if(dist(mouseX, mouseY, student3.posX - 75, student3.posY - 35) < 30){
-
-      console.log("student 3 clicked");
-
-    }
-
-    if(dist(mouseX, mouseY, student4.posX - 75, student4.posY - 35) < 30){
-
-      console.log("student 4 clicked");
-
-    }
 }
 
 function keyPressed() {

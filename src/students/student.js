@@ -1,13 +1,11 @@
 class Student{
 
-    constructor(posX, posY, calledTeacher){
+    constructor(posX, posY){
 
         this.posX = posX;
         this.posY = posY;
 
-        this.calledTeacher = calledTeacher;
-
-        this.intervalId;
+        this.calledTeacher = false;
 
     }
 
@@ -16,27 +14,21 @@ class Student{
         circle(this.posX, this.posY, 20);
     }
 
-    callTeacher(){
+    callTeacher(zX, zY){
 
-        this.calledTeacher = true;
+        let result = false;
+        if(dist(zX, zY, this.posX - 150, this.posY - 75) < 40){
+            return true;
+        }
 
-        this.intervalId = window.setInterval((e) => {
-
-            if(this.calledTeacher){
-                fill(0);
-                rect(this.posX - 150, this.posY - 75, 150, 50);
-            }
-
-
-        }, 3000);
-
+        return result;
 
     }
 
     showQuestion(){
 
-            fill(0);
-            rect(this.posX - 150, this.posY - 75, 150, 50);
+            //fill(0);
+           // rect(this.posX - 150, this.posY - 75, 150, 50);
 
         /*rect(307, 52, 680, 350);*/
     }
@@ -46,5 +38,4 @@ class Student{
         clearInterval(this.intervalId);
 
     }
-
 }
