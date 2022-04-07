@@ -48,6 +48,30 @@ function draw() {
   student3.callTeacher();
   student4.callTeacher();
 
+  let timeout = setInterval((ev) =>{
+
+    student1.calledTeacher = true;
+
+  }, Math.floor(Math.random() * (10000 - 4000) + 4000));
+  
+  let timeout2 = setInterval((ev) =>{
+
+    student2.calledTeacher = true;
+
+  }, Math.floor(Math.random() * (10000 - 4000) + 4000));
+
+  let timeout3 = setInterval((ev) =>{
+
+    student3.calledTeacher = true;
+
+  }, Math.floor(Math.random() * (10000 - 4000) + 4000));
+
+  let timeout4 = setInterval((ev) =>{
+
+    student4.calledTeacher = true;
+
+  }, Math.floor(Math.random() * (10000 - 4000) + 4000));
+
 }
 
 function timer()
@@ -92,11 +116,15 @@ function mousePressed() {
 
       console.log("student 1 clicked");
 
+      student1.calledTeacher = false;
+
     }
 
     if(dist(mouseX, mouseY, student2.posX - 75, student2.posY - 35) < 30){
 
       console.log("student 2 clicked");
+
+      student2.calledTeacher = false;
 
     }
     
@@ -104,11 +132,15 @@ function mousePressed() {
 
       console.log("student 3 clicked");
 
+      student3.calledTeacher = false;
+
     }
 
     if(dist(mouseX, mouseY, student4.posX - 75, student4.posY - 35) < 30){
 
       console.log("student 4 clicked");
+
+      student4.calledTeacher = false;
 
     }
 }

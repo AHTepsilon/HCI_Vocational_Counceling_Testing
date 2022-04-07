@@ -18,18 +18,11 @@ class Student{
 
     callTeacher(){
 
-        this.calledTeacher = true;
-
-        fill(0);
-        rect(this.posX - 150, this.posY - 75, 150, 50);
-
-        this.intervalId = window.setInterval((e) => {
+        if(this.calledTeacher){
 
             fill(0);
             rect(this.posX - 150, this.posY - 75, 150, 50);
-
-        }, 3000);
-
+        }
 
     }
 
