@@ -1,4 +1,4 @@
-let student1;
+let student1, student2, student3, student4, student5, student6;
 
 let bg;
 
@@ -22,6 +22,8 @@ function setup() {
   student2 = new Student2(161, 360);
   student3 = new Student3(1147, 77);
   student4 = new Student4(1147, 360);
+  student5 = new Student5(161, 600);
+  student6 = new Student6(1147, 600);
 
   timerValue = 0;
   timerValueMinutes = 3;
@@ -39,6 +41,8 @@ function draw() {
   student2.paint();
   student3.paint();
   student4.paint();
+  student5.paint();
+  student6.paint();
 
   timer();
   endGame();
@@ -47,6 +51,8 @@ function draw() {
   student2.callTeacher();
   student3.callTeacher();
   student4.callTeacher();
+  student5.callTeacher();
+  student6.callTeacher();
 
   let timeout = setInterval((ev) =>{
 
@@ -69,6 +75,18 @@ function draw() {
   let timeout4 = setInterval((ev) =>{
 
     student4.calledTeacher = true;
+
+  }, Math.floor(Math.random() * (10000 - 4000) + 4000));
+  
+  let timeout5 = setInterval((ev) =>{
+
+    student5.calledTeacher = true;
+
+  }, Math.floor(Math.random() * (10000 - 4000) + 4000));
+  
+  let timeout6 = setInterval((ev) =>{
+
+    student6.calledTeacher = true;
 
   }, Math.floor(Math.random() * (10000 - 4000) + 4000));
 
@@ -141,6 +159,22 @@ function mousePressed() {
       console.log("student 4 clicked");
 
       student4.calledTeacher = false;
+
+    }
+
+    if(dist(mouseX, mouseY, student5.posX - 75, student5.posY - 35) < 30){
+
+      console.log("student 5 clicked");
+
+      student5.calledTeacher = false;
+
+    }
+
+    if(dist(mouseX, mouseY, student6.posX - 75, student6.posY - 35) < 30){
+
+      console.log("student 6 clicked");
+
+      student6.calledTeacher = false;
 
     }
 }
