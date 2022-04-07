@@ -1,11 +1,11 @@
 class Student{
 
-    constructor(posX, posY, calledTeacher){
+    constructor(posX, posY){
 
         this.posX = posX;
         this.posY = posY;
 
-        this.calledTeacher = calledTeacher;
+        this.calledTeacher = false;
 
         this.intervalId;
 
@@ -20,12 +20,15 @@ class Student{
 
         this.calledTeacher = true;
 
+        fill(0);
+        rect(this.posX - 150, this.posY - 75, 150, 50);
+
         this.intervalId = window.setInterval((e) => {
 
-            if(this.calledTeacher){}
+            fill(0);
+            rect(this.posX - 150, this.posY - 75, 150, 50);
 
-
-        }, Math.floor(Math.random() * 2000 + 10000) - 2000);
+        }, 3000);
 
 
     }
