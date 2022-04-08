@@ -1,6 +1,8 @@
 let student1, student2, student3, student4, student5, student6;
 let timeout, timeout2, timeout3, timeout4, timeout5, timeout6;
 
+let phaseNum;
+
 let bg;
 
 let timerValue, timerValueMinutes;
@@ -18,6 +20,8 @@ function setup() {
   gameCanvas = createCanvas(1280, 720);
 
   gameCanvas.parent("gameContainer");
+
+  phaseNum = 0;
 
   student1 = new Student1(161, 77);
   student2 = new Student2(161, 360);
@@ -91,7 +95,9 @@ function draw() {
   student5.callTeacher();
   student6.callTeacher();
 
-  console.log(student1.calledTeacher);
+  console.log(phaseNum);
+
+  changePhase();
 
 }
 
@@ -119,6 +125,25 @@ function timer()
 function timeIt()
 {
 	timerValue -= 1;
+}
+
+function changePhase(){
+
+  if(timerValue == 59){
+    
+    switch(timerValueMinutes){
+
+      case 2:
+        phaseNum = 1;
+        break;
+      case 1:
+        phaseNum = 2;
+        break;
+      case 2:
+        phaseNum = 3;
+        break;
+    }
+  }
 }
 
 function endGame(){
