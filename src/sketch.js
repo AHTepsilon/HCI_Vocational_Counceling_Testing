@@ -1,4 +1,5 @@
 let student1, student2, student3, student4, student5, student6;
+let timeout, timeout2, timeout3, timeout4, timeout5, timeout6;
 
 let bg;
 
@@ -29,6 +30,42 @@ function setup() {
   timerValueMinutes = 3;
 
   setInterval(timeIt, 1000);
+
+  timeout = setInterval((ev) =>{
+
+    student1.calledTeacher = true;
+
+  }, Math.floor(Math.random() * (10000 - 4000) + 4000));
+  
+  timeout2 = setInterval((ev) =>{
+
+    student2.calledTeacher = true;
+
+  }, Math.floor(Math.random() * (18000 - 7000) + 7000));
+
+  timeout3 = setInterval((ev) =>{
+
+    student3.calledTeacher = true;
+
+  }, Math.floor(Math.random() * (20000 - 5000) + 5000));
+
+  timeout4 = setInterval((ev) =>{
+
+    student4.calledTeacher = true;
+
+  }, Math.floor(Math.random() * (24000 - 8000) + 8000));
+  
+  timeout5 = setInterval((ev) =>{
+
+    student5.calledTeacher = true;
+
+  }, Math.floor(Math.random() * (32000 - 24000) + 24000));
+  
+  timeout6 = setInterval((ev) =>{
+
+    student6.calledTeacher = true;
+
+  }, Math.floor(Math.random() * (28000 - 16000) + 16000));
 }
 
 function draw() {
@@ -54,41 +91,7 @@ function draw() {
   student5.callTeacher();
   student6.callTeacher();
 
-  let timeout = setInterval((ev) =>{
-
-    student1.calledTeacher = true;
-
-  }, Math.floor(Math.random() * (10000 - 4000) + 4000));
-  
-  let timeout2 = setInterval((ev) =>{
-
-    student2.calledTeacher = true;
-
-  }, Math.floor(Math.random() * (10000 - 4000) + 4000));
-
-  let timeout3 = setInterval((ev) =>{
-
-    student3.calledTeacher = true;
-
-  }, Math.floor(Math.random() * (10000 - 4000) + 4000));
-
-  let timeout4 = setInterval((ev) =>{
-
-    student4.calledTeacher = true;
-
-  }, Math.floor(Math.random() * (10000 - 4000) + 4000));
-  
-  let timeout5 = setInterval((ev) =>{
-
-    student5.calledTeacher = true;
-
-  }, Math.floor(Math.random() * (10000 - 4000) + 4000));
-  
-  let timeout6 = setInterval((ev) =>{
-
-    student6.calledTeacher = true;
-
-  }, Math.floor(Math.random() * (10000 - 4000) + 4000));
+  console.log(student1.calledTeacher);
 
 }
 
