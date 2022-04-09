@@ -6,6 +6,7 @@ class Student{
         this.posY = posY;
 
         this.calledTeacher = false;
+        this.questionActive = false;
 
         this.intervalId;
 
@@ -32,6 +33,14 @@ class Student{
             rect(this.posX - 150, this.posY - 75, 150, 50);
 
         /*rect(307, 52, 680, 350);*/
+    }
+
+    showProblem(){
+
+        fill(0);
+        rect(348, 52, 550, 350);
+        console.log("nomasss")
+
     }
 
     stopCallingTeacher(){

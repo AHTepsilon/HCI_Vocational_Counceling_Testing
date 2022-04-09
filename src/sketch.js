@@ -9,14 +9,11 @@ let timerValue, timerValueMinutes;
 
 let gameCanvas;
 
-function preload(){
-  
-  bg = loadImage('./img/PLACEHOLDER_bg.png');
-
+function preload() {
+  bg = loadImage("./img/PLACEHOLDER_bg.png");
 }
 
 function setup() {
-
   gameCanvas = createCanvas(1280, 720);
 
   gameCanvas.parent("gameContainer");
@@ -35,40 +32,28 @@ function setup() {
 
   setInterval(timeIt, 1000);
 
-  timeout = setInterval((ev) =>{
-
+  timeout = setInterval((ev) => {
     student1.calledTeacher = true;
-
   }, Math.floor(Math.random() * (10000 - 4000) + 4000));
-  
-  timeout2 = setInterval((ev) =>{
 
+  timeout2 = setInterval((ev) => {
     student2.calledTeacher = true;
-
   }, Math.floor(Math.random() * (18000 - 7000) + 7000));
 
-  timeout3 = setInterval((ev) =>{
-
+  timeout3 = setInterval((ev) => {
     student3.calledTeacher = true;
-
   }, Math.floor(Math.random() * (20000 - 5000) + 5000));
 
-  timeout4 = setInterval((ev) =>{
-
+  timeout4 = setInterval((ev) => {
     student4.calledTeacher = true;
-
   }, Math.floor(Math.random() * (24000 - 8000) + 8000));
-  
-  timeout5 = setInterval((ev) =>{
 
+  timeout5 = setInterval((ev) => {
     student5.calledTeacher = true;
-
   }, Math.floor(Math.random() * (32000 - 24000) + 24000));
-  
-  timeout6 = setInterval((ev) =>{
 
+  timeout6 = setInterval((ev) => {
     student6.calledTeacher = true;
-
   }, Math.floor(Math.random() * (28000 - 16000) + 16000));
 }
 
@@ -95,44 +80,46 @@ function draw() {
   student5.callTeacher();
   student6.callTeacher();
 
-  console.log(phaseNum);
-
   changePhase();
 
+  if (student1.questionActive) {
+    student1.showProblem();
+  } else if (student2.questionActive) {
+    student2.showProblem();
+  } else if (student3.questionActive) {
+    student3.showProblem();
+  } else if (student4.questionActive) {
+    student4.showProblem();
+  } else if (student5.questionActive) {
+    student5.showProblem();
+  } else if (student6.questionActive) {
+    student6.showProblem();
+  }
 }
 
-function timer()
-{
-	textSize(30);
-	textAlign(CENTER);
+function timer() {
+  textSize(30);
+  textAlign(CENTER);
 
-	if(timerValue >= 10)
-	{
-		text(timerValueMinutes + ":" + timerValue, 145, 660);
-	}
-	if(timerValue < 10)
-	{
-		text(timerValueMinutes + ":0" + timerValue, 145, 660);
-	}
-	if(timerValue < 0)
-	{
-		timerValue = 59;
-		timerValueMinutes -= 1;
-	}
-
+  if (timerValue >= 10) {
+    text(timerValueMinutes + ":" + timerValue, 145, 660);
+  }
+  if (timerValue < 10) {
+    text(timerValueMinutes + ":0" + timerValue, 145, 660);
+  }
+  if (timerValue < 0) {
+    timerValue = 59;
+    timerValueMinutes -= 1;
+  }
 }
 
-function timeIt()
-{
-	timerValue -= 1;
+function timeIt() {
+  timerValue -= 1;
 }
 
-function changePhase(){
-
-  if(timerValue == 59){
-    
-    switch(timerValueMinutes){
-
+function changePhase() {
+  if (timerValue == 59) {
+    switch (timerValueMinutes) {
       case 2:
         phaseNum = 1;
         break;
@@ -146,72 +133,115 @@ function changePhase(){
   }
 }
 
-function endGame(){
-  
-  if(timerValue == 0 && timerValueMinutes == 0){
-
+function endGame() {
+  if (timerValue == 0 && timerValueMinutes == 0) {
     alert("Juego terminado");
-
   }
-
 }
 
 function mousePressed() {
   console.log("Click");
-    if(dist(mouseX, mouseY, student1.posX - 75, student1.posY - 35) < 30){
+  if (dist(mouseX, mouseY, student1.posX - 75, student1.posY - 35) < 30) {
+    console.log("student 1 clicked");
 
-      console.log("student 1 clicked");
+    student1.calledTeacher = false;
+    student1.questionActive = true;
+  }
 
-      student1.calledTeacher = false;
+  if (dist(mouseX, mouseY, student2.posX - 75, student2.posY - 35) < 30) {
+    console.log("student 2 clicked");
 
-    }
+    student2.calledTeacher = false;
+    student2.questionActive = true;
+  }
 
-    if(dist(mouseX, mouseY, student2.posX - 75, student2.posY - 35) < 30){
+  if (dist(mouseX, mouseY, student3.posX - 75, student3.posY - 35) < 30) {
+    console.log("student 3 clicked");
 
-      console.log("student 2 clicked");
+    student3.calledTeacher = false;
+    student3.questionActive = true;
+  }
 
-      student2.calledTeacher = false;
+  if (dist(mouseX, mouseY, student4.posX - 75, student4.posY - 35) < 30) {
+    console.log("student 4 clicked");
 
-    }
-    
-    if(dist(mouseX, mouseY, student3.posX - 75, student3.posY - 35) < 30){
+    student4.calledTeacher = false;
+    student4.questionActive = true;
+  }
 
-      console.log("student 3 clicked");
+  if (dist(mouseX, mouseY, student5.posX - 75, student5.posY - 35) < 30) {
+    console.log("student 5 clicked");
 
-      student3.calledTeacher = false;
+    student5.calledTeacher = false;
+    student5.questionActive = true;
+  }
 
-    }
+  if (dist(mouseX, mouseY, student6.posX - 75, student6.posY - 35) < 30) {
+    console.log("student 6 clicked");
 
-    if(dist(mouseX, mouseY, student4.posX - 75, student4.posY - 35) < 30){
+    student6.calledTeacher = false;
+    student6.questionActive = true;
+  }
 
-      console.log("student 4 clicked");
-
-      student4.calledTeacher = false;
-
-    }
-
-    if(dist(mouseX, mouseY, student5.posX - 75, student5.posY - 35) < 30){
-
-      console.log("student 5 clicked");
-
-      student5.calledTeacher = false;
-
-    }
-
-    if(dist(mouseX, mouseY, student6.posX - 75, student6.posY - 35) < 30){
-
-      console.log("student 6 clicked");
-
-      student6.calledTeacher = false;
-
-    }
+  if (
+    mouseX > 348 &&
+    mouseY > 52 &&
+    mouseX < 898 &&
+    mouseY < 402 &&
+    student1.questionActive
+  ) {
+    student1.questionActive = false;
+  }
+  if (
+    mouseX > 348 &&
+    mouseY > 52 &&
+    mouseX < 898 &&
+    mouseY < 402 &&
+    student2.questionActive
+  ) {
+    student2.questionActive = false;
+  }
+  if (
+    mouseX > 348 &&
+    mouseY > 52 &&
+    mouseX < 898 &&
+    mouseY < 402 &&
+    student3.questionActive
+  ) {
+    student3.questionActive = false;
+  }
+  if (
+    mouseX > 348 &&
+    mouseY > 52 &&
+    mouseX < 898 &&
+    mouseY < 402 &&
+    student4.questionActive
+  ) {
+    student4.questionActive = false;
+  }
+  if (
+    mouseX > 348 &&
+    mouseY > 52 &&
+    mouseX < 898 &&
+    mouseY < 402 &&
+    student5.questionActive
+  ) {
+    student5.questionActive = false;
+  }
+  if (
+    mouseX > 348 &&
+    mouseY > 52 &&
+    mouseX < 898 &&
+    mouseY < 402 &&
+    student6.questionActive
+  ) {
+    student6.questionActive = false;
+  }
 }
 
 function keyPressed() {
-
   //DEBUG
-  if(keyCode === UP_ARROW){ 
+  if (keyCode === UP_ARROW) {
     student1.posX++;
   }
-
 }
