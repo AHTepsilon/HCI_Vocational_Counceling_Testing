@@ -1,5 +1,6 @@
 let student1, student2, student3, student4, student5, student6;
-let timeout, timeout2, timeout3, timeout4, timeout5, timeout6;
+let timeout_phase1, timeout2_phase1, timeout3_phase1, timeout4_phase1, timeout5_phase1;
+let timeout_phase2, timeout2_phase2, timeout3_phase2, timeout4_phase2, timeout5_phase2;
 
 let phaseNum;
 
@@ -11,7 +12,7 @@ let gameCanvas;
 
 function preload(){
   
-  bg = loadImage('./img/PLACEHOLDER_bg.png');
+  bg = loadImage('./img/bg.png');
 
 }
 
@@ -23,53 +24,18 @@ function setup() {
 
   phaseNum = 0;
 
-  student1 = new Student1(161, 77);
-  student2 = new Student2(161, 360);
-  student3 = new Student3(1147, 77);
-  student4 = new Student4(1147, 360);
-  student5 = new Student5(161, 600);
-  student6 = new Student6(1147, 600);
+  student1 = new Student1(258, 215);
+  student2 = new Student2(202, 351);
+  student3 = new Student3(144, 502);
+  student4 = new Student4(975, 215);
+  student5 = new Student5(1052, 351);
+  student6 = new Student6(1132, 502);
 
   timerValue = 0;
   timerValueMinutes = 3;
 
   setInterval(timeIt, 1000);
-
-  timeout = setInterval((ev) =>{
-
-    student1.calledTeacher = true;
-
-  }, Math.floor(Math.random() * (10000 - 4000) + 4000));
-  
-  timeout2 = setInterval((ev) =>{
-
-    student2.calledTeacher = true;
-
-  }, Math.floor(Math.random() * (18000 - 7000) + 7000));
-
-  timeout3 = setInterval((ev) =>{
-
-    student3.calledTeacher = true;
-
-  }, Math.floor(Math.random() * (20000 - 5000) + 5000));
-
-  timeout4 = setInterval((ev) =>{
-
-    student4.calledTeacher = true;
-
-  }, Math.floor(Math.random() * (24000 - 8000) + 8000));
-  
-  timeout5 = setInterval((ev) =>{
-
-    student5.calledTeacher = true;
-
-  }, Math.floor(Math.random() * (32000 - 24000) + 24000));
-  
-  timeout6 = setInterval((ev) =>{
-
-    student6.calledTeacher = true;
-
-  }, Math.floor(Math.random() * (28000 - 16000) + 16000));
+  intervalSetter();
 }
 
 function draw() {
@@ -95,7 +61,7 @@ function draw() {
   student5.callTeacher();
   student6.callTeacher();
 
-  console.log(phaseNum);
+  console.log(mouseX + ", " + mouseY);
 
   changePhase();
 
@@ -125,6 +91,43 @@ function timer()
 function timeIt()
 {
 	timerValue -= 1;
+}
+
+function intervalSetter(){
+
+  timeout_phase1 = setInterval((ev) =>{
+
+    student1.calledTeacher = true;
+
+  }, Math.floor(Math.random() * (10000 - 4000) + 4000));
+
+  timeout2_phase1 = setInterval((ev) =>{
+
+    student2.calledTeacher = true;
+
+  }, Math.floor(Math.random() * (17000 - 10000) + 10000));
+
+  timeout3_phase1 = setInterval((ev) =>{
+
+    student6.calledTeacher = true;
+
+  }, Math.floor(Math.random() * (30000 - 17000) + 10000));
+
+  timeout4_phase1 = setInterval((ev) =>{
+
+    student3.calledTeacher = true;
+
+  }, Math.floor(Math.random() * (40000 - 30000) + 10000));
+
+  timeout5_phase1 = setInterval((ev) =>{
+
+    student5.calledTeacher = true;
+
+  }, Math.floor(Math.random() * (59000 - 40000) + 40000));
+
+
+
+
 }
 
 function changePhase(){
