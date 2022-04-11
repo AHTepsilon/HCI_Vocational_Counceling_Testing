@@ -140,7 +140,7 @@ function mousePressed() {
 
   studentsArr.forEach(stud => {
 
-    if(mouseX > stud.posX - 152 && mouseY > stud.posY - 77 && mouseX < stud.posX && mouseY < stud.posY - 24 && stud.calledTeacher){
+    if(dist(mouseX, mouseY, stud.posX - 150, stud.posY - 75) < 100){
 
       console.log(stud + " clicked");
 
