@@ -6,14 +6,15 @@ let studentsArr;
 
 let phaseNum;
 
-let bg;
+let bg, desk;
 
 let timerValue, timerValueMinutes;
 
 let gameCanvas;
 
 function preload() {
-  bg = loadImage("./img/PLACEHOLDER_bg.png");
+  bg = loadImage("./img/bg.png");
+  desk = loadImage("./img/desk.png");
 }
 
 function setup() {
@@ -65,8 +66,9 @@ function setup() {
 }
 
 function draw() {
-  //console.log(mouseX + ", " + mouseY);
+  console.log(mouseX + ", " + mouseY);
 
+  imageMode(CORNER);
   background(255);
   image(bg, 0, 0);
 
@@ -81,6 +83,9 @@ function draw() {
     }
 
   });
+
+  imageMode(CORNER);
+  image(desk, 5, 531);
 
   timer();
   endGame();
@@ -145,10 +150,10 @@ function mousePressed() {
     }
 
     if (
-      mouseX > 348 &&
-      mouseY > 52 &&
-      mouseX < 898 &&
-      mouseY < 402 &&
+      mouseX > 459 &&
+      mouseY > 236 &&
+      mouseX < 743 &&
+      mouseY < 495 &&
       stud.questionActive
     ) {
       stud.questionActive = false;

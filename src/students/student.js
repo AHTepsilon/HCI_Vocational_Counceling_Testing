@@ -8,21 +8,24 @@ class Student{
         this.calledTeacher = false;
         this.questionActive = false;
 
+        this.questionMark = loadImage("./img/question.png");
+        this.questionField = loadImage("./img/questionField.png");
+
         this.intervalId;
 
     }
 
     paint(){
-        fill(0);
-        circle(this.posX, this.posY, 20);
+
     }
 
     callTeacher(){
 
         if(this.calledTeacher){
 
-            fill(0);
-            rect(this.posX - 150, this.posY - 75, 150, 50);
+            imageMode(CENTER);
+            image(this.questionMark, this.posX - 100, this.posY - 75);
+
         }
 
     }
@@ -37,9 +40,11 @@ class Student{
 
     showProblem(){
 
-        fill(0);
-        rect(348, 52, 550, 350);
-        console.log("nomasss")
+        //fill(0);
+        //rect(348, 52, 550, 350);
+
+        imageMode(CENTER);
+        image(this.questionField, 608, 367);
 
     }
 
