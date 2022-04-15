@@ -23,7 +23,7 @@ function preload() {
   screenPic3 = loadImage("./img/screen3.png");
   screenPic4 = loadImage("./img/screen4.png");
   screenPic5 = loadImage("./img/screen5.png");
-  screenPic6 = loadImage("./img/screen6.png");
+  //screenPic6 = loadImage("./img/screen6.png");
 
   bg = loadImage("./img/bg.png");
   desk = loadImage("./img/desk.png");
@@ -118,13 +118,13 @@ function draw() {
 
   }
 
-  else if(screen === 5){
+ /* else if(screen === 5){
 
     image(screenPic6, 0, 0);
 
-  }
+  }*/
 
-  else if(screen === 6){
+  else if(screen === 5){
 
     image(bg, 0, 0);
   
@@ -208,7 +208,7 @@ function mousePressed() {
 
   else if(screen === 1){
 
-    if(mouseX > 534 && mouseY > 523 && mouseX < 745 && mouseY < 583){
+    if(mouseX > 1139 && mouseY > 574 && mouseX < 1243 && mouseY < 605){
 
     screen = 2;
 
@@ -246,7 +246,7 @@ function mousePressed() {
 
   }
 
-  else if(screen === 5){
+ /* else if(screen === 5){
 
     if(mouseX > 1139 && mouseY > 574 && mouseX < 1243 && mouseY < 605){
 
@@ -254,9 +254,9 @@ function mousePressed() {
 
     }
 
-  }
+  }*/
 
-  else if(screen === 6){
+  else if(screen === 5){
 
     studentsArr.forEach(stud => {
 
