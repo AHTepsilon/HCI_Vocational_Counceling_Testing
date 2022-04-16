@@ -1,6 +1,6 @@
-class Student{
+class Student {
 
-    constructor(posX, posY){
+    constructor(posX, posY) {
 
         this.posX = posX;
         this.posY = posY;
@@ -12,7 +12,7 @@ class Student{
         this.questionField = loadImage("./img/questionField.png");
 
         this.questionOne = loadImage("./img/question1.png");
-        this.questionTwo = loadImage("./img/question2.png");
+        /*this.questionTwo = loadImage("./img/question2.png");
         this.questionThree = loadImage("./img/question3.png");
         this.questionFour = loadImage("./img/question4.png");
         this.questionFive = loadImage("./img/question5.png");
@@ -23,19 +23,19 @@ class Student{
         this.questionTen = loadImage("./img/question10.png");
         this.questionEleven = loadImage("./img/question11.png");
         this.questionTwelve = loadImage("./img/question12.png");
-        this.questionThirteen = loadImage("./img/question13.png");
+        this.questionThirteen = loadImage("./img/question13.png");*/
 
         this.intervalId;
 
     }
 
-    paint(){
+    paint() {
 
     }
 
-    callTeacher(){
+    callTeacher() {
 
-        if(this.calledTeacher){
+        if (this.calledTeacher) {
 
             imageMode(CENTER);
             image(this.questionMark, this.posX - 100, this.posY - 75);
@@ -44,26 +44,26 @@ class Student{
 
     }
 
-    showQuestion(){
+    showQuestion() {
 
-            fill(0);
-            rect(this.posX - 150, this.posY - 75, 150, 50);
+        fill(0);
+        rect(this.posX - 150, this.posY - 75, 150, 50);
 
         /*rect(307, 52, 680, 350);*/
     }
 
-    showProblem(){
+    showProblem() {
 
         //fill(0);
         //rect(348, 52, 550, 350);
 
         imageMode(CENTER);
-        image(this.questionOne, 608, 330);
+        image(this.questionField, 608, 330);
 
     }
 
-    stopCallingTeacher(){
-        
+    stopCallingTeacher() {
+
         clearInterval(this.intervalId);
 
     }

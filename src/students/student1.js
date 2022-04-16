@@ -1,6 +1,6 @@
-class Student1 extends Student{
+class Student1 extends Student {
 
-    constructor(posX, posY){
+    constructor(posX, posY) {
 
         super(posX, posY);
 
@@ -8,11 +8,11 @@ class Student1 extends Student{
 
     }
 
-    paint(){
+    paint() {
 
         imageMode(CENTER);
         image(this.sprite, this.posX, this.posY);
 
     }
-    
+
 }
