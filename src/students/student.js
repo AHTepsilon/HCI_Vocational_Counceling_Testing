@@ -78,6 +78,7 @@ class Student {
          ];
 
 
+         
          for (let index = 0; 1 < cards.length; index++) {
              //const element = array[index];
              imageMode(CENTER);
