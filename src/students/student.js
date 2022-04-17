@@ -5,6 +5,9 @@ class Student {
         this.posX = posX;
         this.posY = posY;
 
+
+
+
         this.calledTeacher = false;
         this.questionActive = false;
 
@@ -56,10 +59,38 @@ class Student {
 
         //fill(0);
         //rect(348, 52, 550, 350);
-
         imageMode(CENTER);
         image(this.questionField, 608, 330);
+        /* let cards = [
+             { name: "question1", img: "./img/question1.png" },
+             { name: "question2", img: "./img/question2.png" },
+             { name: "question3", img: "./img/question3.png" },
+             { name: "question4", img: "./img/question3.png" },
+             { name: "question5", img: "./img/question3.png" },
+             { name: "question6", img: "./img/question3.png" },
+             { name: "question7", img: "./img/question3.png" },
+             { name: "question8", img: "./img/question3.png" },
+             { name: "question9", img: "./img/question3.png" },
+             { name: "question10", img: "./img/question3.png" },
+             { name: "question11", img: "./img/question3.png" },
+             { name: "question12", img: "./img/question3.png" },
+             { name: "question13", img: "./img/question3.png" },
+         ];
 
+
+         
+         for (let index = 0; 1 < cards.length; index++) {
+             //const element = array[index];
+             imageMode(CENTER);
+
+             image(this.cards[2], 608, 330);
+
+
+
+
+
+
+         }*/
     }
 
     stopCallingTeacher() {
