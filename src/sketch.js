@@ -71,7 +71,7 @@ function setup() {
   setInterval(timeIt, 1000);
 
   //if(screen === 6){
-  timeout = setInterval((ev) => {
+  /*timeout = setInterval((ev) => {
     student1.calledTeacher = true;
   }, Math.floor(Math.random() * (10000 - 4000) + 4000) + frameCount);
 
@@ -94,8 +94,21 @@ function setup() {
   timeout6 = setInterval((ev) => {
     student6.calledTeacher = true;
   }, Math.floor(Math.random() * (28000 - 16000) + 16000) + frameCount);
-
+*/
   //}
+
+  if(screen == 5){
+    
+    if(timerValueMinutes == 2){
+
+      if(timerValue == 56){
+
+        student1.calledTeacher = true;
+
+      }
+
+    }
+  }
 }
 
 function draw() {
