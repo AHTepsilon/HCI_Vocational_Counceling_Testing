@@ -98,16 +98,7 @@ function setup() {
   //}
 
   if(screen == 5){
-    
-    if(timerValueMinutes == 2){
-
-      if(timerValue == 56){
-
-        student1.calledTeacher = true;
-
-      }
-
-    }
+  
   }
 }
 
@@ -169,6 +160,58 @@ function draw() {
       }
 
     });
+
+    if(timerValueMinutes == 2){
+
+      if(timerValue == 56){ //pregunta 1
+
+        student1.calledTeacher = true;
+
+      }
+
+      else if(timerValue == 46){ //pregunta 2
+
+        student2.calledTeacher = true;
+
+      }
+
+      else if(timerValue == 38){ //pregunta 3
+
+        student4.calledTeacher = true;
+
+      }
+
+      else if(timerValue == 30){ //pregunta 4
+
+        student1.calledTeacher = true;
+
+      }
+
+      else if(timerValue == 22){ //pregunta 5
+
+        student5.calledTeacher = true;
+
+      }
+
+      else if(timerValue == 15){ //pregunta 6
+
+        student3.calledTeacher = true;
+
+      }
+
+      else if(timerValue == 5){
+
+        student2.calledTeacher = true;
+
+      }
+
+    }
+
+    else if(timerValueMinutes == 1){
+
+
+
+    }
 
     imageMode(CORNER);
     image(desk, 5, 531);
@@ -299,6 +342,8 @@ function mousePressed() {
         stud.calledTeacher = false;
         stud.questionActive = true;
 
+        timerValue--;
+
       }
 
       if (
@@ -309,6 +354,8 @@ function mousePressed() {
         stud.questionActive
       ) {
         stud.questionActive = false;
+
+        timerValue++;
       }
 
     });
