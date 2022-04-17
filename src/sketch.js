@@ -23,7 +23,24 @@ function preload() {
   screenPic3 = loadImage("./img/screen3.png");
   screenPic4 = loadImage("./img/screen4.png");
   screenPic5 = loadImage("./img/screen5.png");
-  screenPic6 = loadImage("./img/screen6.png");
+  //screenPic6 = loadImage("./img/screen6.png");
+
+
+  //preguntas pics
+
+  /*questionOne = loadImage("./img/question1.png");
+  questionTwo = loadImage("./img/question2.png");
+  questionThree = loadImage("./img/question3.png");
+  questionFour = loadImage("./img/question4.png");
+  questionFive = loadImage("./img/question5.png");
+  questionSix = loadImage("./img/question6.png");
+  questionSeven = loadImage("./img/question7.png");
+  questionEight = loadImage("./img/question8.png");
+  questionNine = loadImage("./img/question9.png");
+  questionTen = loadImage("./img/question10.png");
+  questionEleven = loadImage("./img/question11.png");
+  questionTwelve = loadImage("./img/question12.png");
+  questionThirteen = loadImage("./img/question13.png");*/
 
   bg = loadImage("./img/bg.png");
   desk = loadImage("./img/desk.png");
@@ -51,8 +68,9 @@ function setup() {
   timerValue = 0;
   timerValueMinutes = 3;
 
-    setInterval(timeIt, 1000);
+  setInterval(timeIt, 1000);
 
+<<<<<<< HEAD
     //if(screen === 6){
 
     //TODO: FIX STUDENTS' QUESTIONS TIMING
@@ -80,6 +98,32 @@ function setup() {
     timeout6 = setInterval((ev) => {
       student6.calledTeacher = true;
     }, Math.floor(Math.random() * (28000 - 16000) + 16000) + frameCount);
+=======
+  //if(screen === 6){
+  timeout = setInterval((ev) => {
+    student1.calledTeacher = true;
+  }, Math.floor(Math.random() * (10000 - 4000) + 4000) + frameCount);
+
+  timeout2 = setInterval((ev) => {
+    student2.calledTeacher = true;
+  }, Math.floor(Math.random() * (18000 - 7000) + 7000) + frameCount);
+
+  timeout3 = setInterval((ev) => {
+    student3.calledTeacher = true;
+  }, Math.floor(Math.random() * (20000 - 5000) + 5000) + frameCount);
+
+  timeout4 = setInterval((ev) => {
+    student4.calledTeacher = true;
+  }, Math.floor(Math.random() * (24000 - 8000) + 8000) + frameCount);
+
+  timeout5 = setInterval((ev) => {
+    student5.calledTeacher = true;
+  }, Math.floor(Math.random() * (32000 - 24000) + 24000) + frameCount);
+
+  timeout6 = setInterval((ev) => {
+    student6.calledTeacher = true;
+  }, Math.floor(Math.random() * (28000 - 16000) + 16000) + frameCount);
+>>>>>>> 4a8470223d74410f87a6ffce23fd8fe073977d14
 
   //}
 }
@@ -92,67 +136,69 @@ function draw() {
   console.log(frameCount);
   cursorChange();
 
-  if(screen === 0){
-    
+  if (screen === 0) {
+
     image(screenPic1, 0, 0);
 
   }
 
-  else if(screen === 1){
-    
+  else if (screen === 1) {
+
     image(screenPic2, 0, 0);
 
   }
 
-  else if(screen === 2){
+  else if (screen === 2) {
 
     image(screenPic3, 0, 0);
 
   }
 
-  else if(screen === 3){
+  else if (screen === 3) {
 
     image(screenPic4, 0, 0);
 
   }
 
-  else if(screen === 4){
+  else if (screen === 4) {
 
     image(screenPic5, 0, 0);
 
   }
 
-  else if(screen === 5){
+  /* else if(screen === 5){
+ 
+     image(screenPic6, 0, 0);
+ 
+   }*/
 
-    image(screenPic6, 0, 0);
-
-  }
-
-  else if(screen === 6){
+  else if (screen === 5) {
 
     image(bg, 0, 0);
-  
-    
+
+
     studentsArr.forEach((stud) => {
-  
+
       stud.paint();
       stud.callTeacher();
-  
-      if(stud.questionActive){
+
+      if (stud.questionActive) {
         stud.showProblem();
       }
-  
+
     });
-  
+
     imageMode(CORNER);
     image(desk, 5, 531);
-  
+
     timer();
     endGame();
-  
+
     changePhase();
 
   }
+
+
 }
 
 function timer() {
@@ -293,81 +339,86 @@ function cursorChange(){
 function mousePressed() {
   console.log("Click");
 
-  if(screen === 0){
+  if (screen === 0) {
 
-    if(mouseX > 534 && mouseY > 523 && mouseX < 745 && mouseY < 583){
+    if (mouseX > 534 && mouseY > 523 && mouseX < 745 && mouseY < 583) {
 
-    screen = 1;
-
-    }
-
-  }
-
-  else if(screen === 1){
-
-    if(mouseX > 534 && mouseY > 523 && mouseX < 745 && mouseY < 583){
-
-    screen = 2;
-
-    }
-  
-  }
-
-  else if(screen === 2){
-
-    if(mouseX > 1139 && mouseY > 574 && mouseX < 1243 && mouseY < 605){
-
-    screen = 3;
+      screen = 1;
 
     }
 
   }
 
-  else if(screen === 3){
+  else if (screen === 1) {
 
-    if(mouseX > 1139 && mouseY > 574 && mouseX < 1243 && mouseY < 605){
+    if (mouseX > 1139 && mouseY > 574 && mouseX < 1243 && mouseY < 605) {
 
-    screen = 4;
-
-    }
-
-  }
-
-  else if(screen === 4){
-
-    if(mouseX > 1139 && mouseY > 574 && mouseX < 1243 && mouseY < 605){
-
-    screen = 5;
+      screen = 2;
 
     }
 
   }
 
-  else if(screen === 5){
+  else if (screen === 2) {
 
-    if(mouseX > 1139 && mouseY > 574 && mouseX < 1243 && mouseY < 605){
+    if (mouseX > 1139 && mouseY > 574 && mouseX < 1243 && mouseY < 605) {
 
-    screen = 6;
+      screen = 3;
 
     }
 
   }
 
-  else if(screen === 6){
+  else if (screen === 3) {
+
+    if (mouseX > 1139 && mouseY > 574 && mouseX < 1243 && mouseY < 605) {
+
+      screen = 4;
+
+    }
+
+  }
+
+  else if (screen === 4) {
+
+    if (mouseX > 1139 && mouseY > 574 && mouseX < 1243 && mouseY < 605) {
+
+      screen = 5;
+
+    }
+
+  }
+
+  /* else if(screen === 5){
+ 
+     if(mouseX > 1139 && mouseY > 574 && mouseX < 1243 && mouseY < 605){
+ 
+     screen = 6;
+ 
+     }
+ 
+   }*/
+
+  else if (screen === 5) {
 
     studentsArr.forEach(stud => {
 
+<<<<<<< HEAD
       if(dist(mouseX, mouseY, stud.posX, stud.posY) < 100){
 
         cursor(HAND);
   
+=======
+      if (dist(mouseX, mouseY, stud.posX - 150, stud.posY - 75) < 100) {
+
+>>>>>>> 4a8470223d74410f87a6ffce23fd8fe073977d14
         console.log(stud + " clicked");
-  
+
         stud.calledTeacher = false;
         stud.questionActive = true;
-  
+
       }
-  
+
       if (
         mouseX > 459 &&
         mouseY > 236 &&
@@ -377,10 +428,67 @@ function mousePressed() {
       ) {
         stud.questionActive = false;
       }
-  
+
     });
 
   }
+
+
+  //////////PREGUNTAS////////
+  // x,y esquina superior izquierda &&  x,y esquina inferior derecha
+
+  //pregunta 1 (A)
+  //pregunta 2 (A)
+  //pregunta 3 (C)
+  //pregunta 4 (C)
+  //pregunta 5 (A)
+  //pregunta 6 (A)
+  //pregunta 7 (B)
+  //pregunta 8 (B)
+  //pregunta 9 (B)
+  //pregunta 10 (A)
+  //pregunta 11 (C)
+  //pregunta 12 (C)
+  //pregunta 13 (A)
+
+
+
+  //respuesta A
+  if (mouseX > 432 && mouseY > 285 && mouseX < 499 && mouseY < 307) {
+
+     console.log("HOLAAA");
+
+    //desaparecer el cuadro de pregunta 
+    //pintar la siguiente pregunta
+    //sumar puntaje correspondiente si es la respuesta correcta
+
+  }
+
+  //respuesta B
+  if (mouseX > 527 && mouseY > 285 && mouseX < 594 && mouseY < 307) {
+
+    //desaparecer el cuadro de pregunta
+    //pintar la siguiente pregunta
+    //sumar puntaje correspondiente si es la respuesta correcta
+  }
+
+  //respuesta C
+  if (mouseX > 620 && mouseY > 285 && mouseX < 687 && mouseY < 307) {
+
+    //desaparecer el cuadro de pregunta
+    //pintar la siguiente pregunta
+    //sumar puntaje correspondiente si es la respuesta correcta
+  }
+
+  //respuesta D
+  if (mouseX > 715 && mouseY > 285 && mouseX < 780 && mouseY < 307) {
+
+    //desaparecer el cuadro de pregunta
+    //pintar la siguiente pregunta
+    //sumar puntaje correspondiente si es la respuesta correcta
+  }
+
+
 
 
 }
