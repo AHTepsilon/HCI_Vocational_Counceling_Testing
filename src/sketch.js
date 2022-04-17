@@ -40,7 +40,7 @@ function preload() {
   questionTen = loadImage("./img/question10.png");
   questionEleven = loadImage("./img/question11.png");
   questionTwelve = loadImage("./img/question12.png");
-  questionThirteen = loadImage("./img/question13.png");*/
+ */
 
   bg = loadImage("./img/bg.png");
   desk = loadImage("./img/desk.png");
