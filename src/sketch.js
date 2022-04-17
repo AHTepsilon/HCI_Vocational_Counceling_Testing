@@ -54,6 +54,9 @@ function setup() {
     setInterval(timeIt, 1000);
 
     //if(screen === 6){
+
+    //TODO: FIX STUDENTS' QUESTIONS TIMING
+
     timeout = setInterval((ev) => {
       student1.calledTeacher = true;
     }, Math.floor(Math.random() * (10000 - 4000) + 4000) + frameCount);
@@ -87,6 +90,7 @@ function draw() {
   background(255);
   //console.log(mouseX + ", " + mouseY);
   console.log(frameCount);
+  cursorChange();
 
   if(screen === 0){
     
@@ -193,6 +197,99 @@ function endGame() {
   }
 }
 
+function cursorChange(){
+
+  if(screen === 0){
+
+    if(mouseX > 534 && mouseY > 523 && mouseX < 745 && mouseY < 583){
+      cursor(HAND);
+    }
+
+    else{
+      cursor(ARROW);
+    }
+
+  }
+
+  else if(screen === 1){
+
+    if(mouseX > 534 && mouseY > 523 && mouseX < 745 && mouseY < 583){
+      cursor(HAND);
+    }
+
+    else{
+      cursor(ARROW);
+    }
+  
+  }
+
+  else if(screen === 2){
+
+    if(mouseX > 1139 && mouseY > 574 && mouseX < 1243 && mouseY < 605){
+      cursor(HAND);
+    }
+
+    else{
+      cursor(ARROW);
+    }
+
+  }
+
+  else if(screen === 3){
+
+    if(mouseX > 1139 && mouseY > 574 && mouseX < 1243 && mouseY < 605){
+      cursor(HAND);
+    }
+
+    else{
+      cursor(ARROW);
+    }
+
+  }
+
+  else if(screen === 4){
+
+    if(mouseX > 1139 && mouseY > 574 && mouseX < 1243 && mouseY < 605){
+      cursor(HAND);
+    }
+
+    else{
+      cursor(ARROW);
+    }
+
+  }
+
+  else if(screen === 5){
+
+    if(mouseX > 1139 && mouseY > 574 && mouseX < 1243 && mouseY < 605){
+      cursor(HAND);
+    }
+
+    else{
+      cursor(ARROW);
+    }
+
+  }
+
+  else if(screen === 6){
+
+    studentsArr.forEach(stud => {
+
+      if(dist(mouseX, mouseY, stud.posX, stud.posY) < 100){
+
+        cursor(HAND);
+      }
+
+      else{
+        cursor(ARROW);
+      }
+  
+    });
+  }
+
+
+}
+
 function mousePressed() {
   console.log("Click");
 
@@ -260,7 +357,9 @@ function mousePressed() {
 
     studentsArr.forEach(stud => {
 
-      if(dist(mouseX, mouseY, stud.posX - 150, stud.posY - 75) < 100){
+      if(dist(mouseX, mouseY, stud.posX, stud.posY) < 100){
+
+        cursor(HAND);
   
         console.log(stud + " clicked");
   
