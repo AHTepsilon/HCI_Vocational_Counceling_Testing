@@ -26,7 +26,7 @@ class Student {
         this.questionTen = loadImage("./img/question10.png");
         this.questionEleven = loadImage("./img/question11.png");
         this.questionTwelve = loadImage("./img/question12.png");
-        this.questionThirteen = loadImage("./img/question13.png");*/
+       */
 
         this.intervalId;
 
