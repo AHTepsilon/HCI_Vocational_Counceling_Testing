@@ -70,35 +70,6 @@ function setup() {
 
   setInterval(timeIt, 1000);
 
-<<<<<<< HEAD
-    //if(screen === 6){
-
-    //TODO: FIX STUDENTS' QUESTIONS TIMING
-
-    timeout = setInterval((ev) => {
-      student1.calledTeacher = true;
-    }, Math.floor(Math.random() * (10000 - 4000) + 4000) + frameCount);
-  
-    timeout2 = setInterval((ev) => {
-      student2.calledTeacher = true;
-    }, Math.floor(Math.random() * (18000 - 7000) + 7000)  + frameCount);
-  
-    timeout3 = setInterval((ev) => {
-      student3.calledTeacher = true;
-    }, Math.floor(Math.random() * (20000 - 5000) + 5000)  + frameCount);
-  
-    timeout4 = setInterval((ev) => {
-      student4.calledTeacher = true;
-    }, Math.floor(Math.random() * (24000 - 8000) + 8000)  + frameCount);
-  
-    timeout5 = setInterval((ev) => {
-      student5.calledTeacher = true;
-    }, Math.floor(Math.random() * (32000 - 24000) + 24000)  + frameCount);
-  
-    timeout6 = setInterval((ev) => {
-      student6.calledTeacher = true;
-    }, Math.floor(Math.random() * (28000 - 16000) + 16000) + frameCount);
-=======
   //if(screen === 6){
   timeout = setInterval((ev) => {
     student1.calledTeacher = true;
@@ -123,7 +94,6 @@ function setup() {
   timeout6 = setInterval((ev) => {
     student6.calledTeacher = true;
   }, Math.floor(Math.random() * (28000 - 16000) + 16000) + frameCount);
->>>>>>> 4a8470223d74410f87a6ffce23fd8fe073977d14
 
   //}
 }
@@ -134,7 +104,6 @@ function draw() {
   background(255);
   //console.log(mouseX + ", " + mouseY);
   console.log(frameCount);
-  cursorChange();
 
   if (screen === 0) {
 
@@ -243,99 +212,6 @@ function endGame() {
   }
 }
 
-function cursorChange(){
-
-  if(screen === 0){
-
-    if(mouseX > 534 && mouseY > 523 && mouseX < 745 && mouseY < 583){
-      cursor(HAND);
-    }
-
-    else{
-      cursor(ARROW);
-    }
-
-  }
-
-  else if(screen === 1){
-
-    if(mouseX > 534 && mouseY > 523 && mouseX < 745 && mouseY < 583){
-      cursor(HAND);
-    }
-
-    else{
-      cursor(ARROW);
-    }
-  
-  }
-
-  else if(screen === 2){
-
-    if(mouseX > 1139 && mouseY > 574 && mouseX < 1243 && mouseY < 605){
-      cursor(HAND);
-    }
-
-    else{
-      cursor(ARROW);
-    }
-
-  }
-
-  else if(screen === 3){
-
-    if(mouseX > 1139 && mouseY > 574 && mouseX < 1243 && mouseY < 605){
-      cursor(HAND);
-    }
-
-    else{
-      cursor(ARROW);
-    }
-
-  }
-
-  else if(screen === 4){
-
-    if(mouseX > 1139 && mouseY > 574 && mouseX < 1243 && mouseY < 605){
-      cursor(HAND);
-    }
-
-    else{
-      cursor(ARROW);
-    }
-
-  }
-
-  else if(screen === 5){
-
-    if(mouseX > 1139 && mouseY > 574 && mouseX < 1243 && mouseY < 605){
-      cursor(HAND);
-    }
-
-    else{
-      cursor(ARROW);
-    }
-
-  }
-
-  else if(screen === 6){
-
-    studentsArr.forEach(stud => {
-
-      if(dist(mouseX, mouseY, stud.posX, stud.posY) < 100){
-
-        cursor(HAND);
-      }
-
-      else{
-        cursor(ARROW);
-      }
-  
-    });
-  }
-
-
-}
-
 function mousePressed() {
   console.log("Click");
 
@@ -403,15 +279,8 @@ function mousePressed() {
 
     studentsArr.forEach(stud => {
 
-<<<<<<< HEAD
-      if(dist(mouseX, mouseY, stud.posX, stud.posY) < 100){
-
-        cursor(HAND);
-  
-=======
       if (dist(mouseX, mouseY, stud.posX - 150, stud.posY - 75) < 100) {
 
->>>>>>> 4a8470223d74410f87a6ffce23fd8fe073977d14
         console.log(stud + " clicked");
 
         stud.calledTeacher = false;
