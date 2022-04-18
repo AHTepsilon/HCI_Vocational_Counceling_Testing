@@ -10,8 +10,12 @@ class Question1 extends Question {
 
     paint() {
 
-        imageMode(CENTER);
-        image(this.card, this.posX, this.posY);
+        if(Student1.calledTeacher){
+
+            imageMode(CENTER);
+            image(this.card, this.posX, this.posY);
+
+        }
 
     }
 

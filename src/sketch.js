@@ -40,6 +40,10 @@ let score;
 
 let q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18, q19, q20, q21, q22;
 
+let qC1, qC2, qC3, qC4, qC5, qC6, qC7, qC8, qC9, qC10, qC11, qC12, qC13, qC14, qC15, qC16, qC17, qC18, qC19, qC20, qC21, qC22;
+
+let questionArr;
+
 let q1C, q2C, q3C, q4C, q5C, q6C, q7C, q8C, q9C, q10C, q11C, q12C, q13C, q14C, q15C, q16C, q17C, q18C, q19C, q20C, q21C, q22C; //booleanos para definir si la pregunta es :) o :(
 
 let questionBooleanArr;
@@ -105,6 +109,31 @@ function setup() {
 
   questionBooleanArr = [q1C, q2C, q3C, q4C, q5C, q6C, q7C, q8C, q9C, q10C, q11C, q12C, q13C, q14C, q15C, q16C, q17C, q18C, q19C, q20C, q21C, q22C];
 
+  qC1 = new Question1(608, 330);
+  qC2 = new Question2(608, 330);
+  qC3 = new Question3(608, 330);
+  qC4 = new Question4(608, 330);
+  qC5 = new Question5(608, 330);
+  qC6 = new Question6(608, 330);
+  qC7 = new Question7(608, 330);
+  qC8 = new Question8(608, 330);
+  qC9 = new Question9(608, 330);
+  qC10 = new Question10(608, 330);
+  qC11 = new Question11(608, 330);
+  qC12 = new Question12(608, 330);
+  qC13 = new Question13(608, 330);
+  qC14 = new Question14(608, 330);
+  qC15 = new Question15(608, 330);
+  qC16 = new Question16(608, 330);
+  qC17 = new Question17(608, 330);
+  qC18 = new Question18(608, 330);
+  qC19 = new Question19(608, 330);
+  qC20 = new Question20(608, 330);
+  qC21 = new Question21(608, 330);
+  qC22 = new Question22(608, 330);
+
+  questionArr = [qC1, qC2, qC3, qC4, qC5, qC6, qC7, qC8, qC9, qC10, qC11, qC12, qC13, qC14, qC15, qC16, qC17, qC18, qC19, qC20, qC21, qC22];
+
   questionBooleanArr.forEach(quest =>{
 
     quest = false;
@@ -158,7 +187,8 @@ function draw() {
   //console.log(mouseX + ", " + mouseY);
   //console.log(frameCount);
   console.log(questionCounter + ", " + score + ", " + q1C);
-  console.log(score);
+  //console.log(score);
+  //console.log(questionBooleanArr);
 
   if (screen === 0) {
 
@@ -216,43 +246,49 @@ function draw() {
 
       if(timerValue == 56){ //pregunta 1
 
-        student1.calledTeacher = true;
-
+        student1.calledTeacher = true; //student 1 question 1
+        questionCounter = 1;
       }
 
       if(timerValue == 46){ //pregunta 2
 
-        student2.calledTeacher = true;
+        student2.calledTeacher = true; //student 2 question 1
+        questionCounter = 2;
 
       }
 
       if(timerValue == 38){ //pregunta 3
 
-        student4.calledTeacher = true;
+        student4.calledTeacher = true; //student 4 question 1
+        questionCounter = 3;
 
       }
 
       if(timerValue == 30){ //pregunta 4
 
-        student1.calledTeacher = true;
+        student1.calledTeacher = true; //student 1 question 2
+        questionCounter = 4;
 
       }
 
       if(timerValue == 22){ //pregunta 5
 
-        student5.calledTeacher = true;
+        student5.calledTeacher = true; //student 5 question 1
+        questionCounter = 5;
 
       }
 
       if(timerValue == 15){ //pregunta 6
 
-        student3.calledTeacher = true;
+        student3.calledTeacher = true; //student 3 question 1
+        questionCounter = 6;
 
       }
 
       if(timerValue == 5){ //pregunta 7
 
-        student2.calledTeacher = true;
+        student2.calledTeacher = true; //student 2 question 2
+        questionCounter = 7;
 
       }
 
@@ -262,49 +298,57 @@ function draw() {
 
       if(timerValue == 58){ //pregunta 8
 
-        student5.calledTeacher = true;
+        student5.calledTeacher = true; //student 5 question 2
+        questionCounter = 8;
 
       }
 
       if(timerValue == 50){ //pregunta 9
 
-        student6.calledTeacher = true;
+        student6.calledTeacher = true; //student 6 question 1
+        questionCounter = 9;
 
       }
 
       if(timerValue == 40){ //pregunta 10
 
-        student2.calledTeacher = true;
+        student2.calledTeacher = true; //student 2 question 3
+        questionCounter = 10;
 
       }
 
       if(timerValue == 31){ //pregunta 11
 
-        student4.calledTeacher = true;
+        student4.calledTeacher = true; //student 4 question 2
+        questionCounter = 11;
 
       }
 
       if(timerValue == 25){ //pregunta 12
 
-        student3.calledTeacher = true;
+        student3.calledTeacher = true; //student 3 question 2
+        questionCounter = 12;
 
       }
 
       if(timerValue == 16){ //pregunta 13
 
-        student6.calledTeacher = true;
+        student6.calledTeacher = true; //student 6 question 2
+        questionCounter = 13;
 
       }
 
       if(timerValue == 10){ //pregunta 14
 
-        student4.calledTeacher = true;
+        student4.calledTeacher = true; //student 4 question 3
+        questionCounter = 14;
 
       }
 
       if(timerValue == 1){ //pregunta 15
 
-        student1.calledTeacher = true;
+        student1.calledTeacher = true; //student 1 question 3
+        questionCounter = 15;
 
       }
 
@@ -314,43 +358,50 @@ function draw() {
 
       if(timerValue == 56){ //pregunta 16
 
-        student5.calledTeacher = true;
+        student5.calledTeacher = true; //student 5 question 3
+        questionCounter = 16;
 
       }
 
       if(timerValue == 49){ //pregunta 17
 
-        student3.calledTeacher = true;
+        student3.calledTeacher = true; //student 3 question 3
+        questionCounter = 17;
 
       }
 
       if(timerValue == 38){ //pregunta 18
 
-        student4.calledTeacher = true;
+        student4.calledTeacher = true; //student 4 question 4
+        questionCounter = 18;
 
       }
 
       if(timerValue == 30){ //pregunta 19
 
-        student6.calledTeacher = true;
+        student6.calledTeacher = true; //student 6 question 3
+        questionCounter = 19;
 
       }
 
       if(timerValue == 24){ //pregunta 20
 
-        student1.calledTeacher = true;
+        student1.calledTeacher = true; //student 1 question 4
+        questionCounter = 20;
 
       }
 
       if(timerValue == 18){ //pregunta 21
       
-        student3.calledTeacher = true;
+        student3.calledTeacher = true; //student 3 question 4
+        questionCounter = 21;
       
       }
 
       if(timerValue == 10){ //pregunta 22
 
-        student2.calledTeacher = true;
+        student2.calledTeacher = true; //student 2 question 4
+        questionCounter = 22;
 
       }
 
@@ -385,6 +436,132 @@ function whatQuestion(){
 
         }
 
+        if(questionCounter == 2){
+
+          q2C = true;
+
+        }
+
+        if(questionCounter == 3){
+
+          q3C = true;
+
+        }
+
+        if(questionCounter == 4){
+
+          q4C = true;
+
+        }
+
+        if(questionCounter == 5){
+
+          q5C = true;
+
+        }
+
+        if(questionCounter == 6){
+
+          q6C = true;
+
+        }
+
+        if(questionCounter == 7){
+
+          q7C = true;
+
+        }
+
+        if(questionCounter == 8){
+
+          q8C = true;
+
+        }
+
+        if(questionCounter == 9){
+
+          q9C = true;
+
+        }
+
+        if(questionCounter == 10){
+
+          q10C = true;
+
+        }
+
+        if(questionCounter == 11){
+
+          q11C = true;
+
+        }
+
+        if(questionCounter == 12){
+
+          q12C = true;
+
+        }
+
+        if(questionCounter == 13){
+
+          q13C = true;
+
+        }
+
+        if(questionCounter == 14){
+
+          q14C = true;
+
+        }
+
+        if(questionCounter == 15){
+
+          q15C = true;
+
+        }
+
+        if(questionCounter == 16){
+
+          q16C = true;
+
+        }
+
+        if(questionCounter == 17){
+
+          q17C = true;
+
+        }
+
+        if(questionCounter == 18){
+
+          q18C = true;
+
+        }
+
+        if(questionCounter == 19){
+
+          q19C = true;
+
+        }
+
+        if(questionCounter == 20){
+
+          q20C = true;
+
+        }
+
+        if(questionCounter == 21){
+
+          q21C = true;
+
+        }
+
+        if(questionCounter == 22){
+
+          q22C = true;
+
+        }
+
       }
 
     });
@@ -393,27 +570,7 @@ function whatQuestion(){
 
 function addScore(){
   
-  /*questionBooleanArr.forEach(quest =>{
-
-    if(quest){
-
-      score += 100;
-      
-    }
-
-  });*/
-
-  if(q1C){
-
-    score += 1;
-
-  }
-
-  if(q2C){
-
-    score += 1;
-
-  }
+  
 
 }
 
@@ -456,6 +613,7 @@ function changePhase() {
 function endGame() {
   if (timerValue == 0 && timerValueMinutes == 0) {
     alert("Juego terminado");
+
   }
 }
 
@@ -531,9 +689,140 @@ function mousePressed() {
         console.log(stud + " clicked");
 
         stud.calledTeacher = false;
-        stud.questionActive = true;
 
         timerValue--;
+
+        if(questionCounter == 1){
+
+          student1.question1Called = true;
+
+        }
+
+        if(questionCounter == 2){
+
+          student2.question2Called = true;
+
+        }
+
+        if(questionCounter == 3){
+
+          student4.question3Called = true;
+
+        }
+
+        if(questionCounter == 4){
+
+          student1.question4Called = true;
+
+        }
+
+        if(questionCounter == 5){
+
+          student5.question5Called = true;
+
+        }
+
+        if(questionCounter == 6){
+
+          student3.question6Called = true;
+
+        }
+
+        if(questionCounter == 7){
+
+          student2.question7Called = true;
+
+        }
+
+        if(questionCounter == 8){
+
+          student5.question8Called = true;
+
+        }
+
+        if(questionCounter == 9){
+
+          student6.question9Called = true;
+
+        }
+
+        if(questionCounter == 10){
+
+          student2.question10Called = true;
+
+        }
+
+        if(questionCounter == 11){
+
+          student4.question11Called = true;
+
+        }
+
+        if(questionCounter == 12){
+
+          student3.question12Called = true;
+
+        }
+
+        if(questionCounter == 13){
+
+          student6.question13Called = true;
+
+        }
+
+        if(questionCounter == 14){
+
+          student4.question14Called = true;
+
+        }
+
+        if(questionCounter == 15){
+
+          student1.question15Called = true;
+
+        }
+
+        if(questionCounter == 16){
+
+          student5.question16Called = true;
+
+        }
+
+        if(questionCounter == 17){
+
+          student3.question17Called = true;
+
+        }
+
+        if(questionCounter == 18){
+
+          student4.question18Called = true;
+
+        }
+
+        if(questionCounter == 19){
+
+          student6.question19Called = true;
+
+        }
+
+        if(questionCounter == 20){
+
+          student1.question20Called = true;
+
+        }
+
+        if(questionCounter == 21){
+
+          student3.question21Called = true;
+
+        }
+
+        if(questionCounter == 22){
+
+          student2.question22Called = true;
+
+        }
 
       }
 
@@ -547,10 +836,11 @@ function mousePressed() {
         stud.questionActive = false;
 
         timerValue++;
-        questionCounter++;
       }
 
     });
+
+
 
   }
 
@@ -572,14 +862,16 @@ function mousePressed() {
   //pregunta 12 (C)
   //pregunta 13 (A)
 
+  
+  if(student1.question1Called){
 
-
-  //respuesta A
+      //respuesta A
   if (mouseX > 432 && mouseY > 285 && mouseX < 499 && mouseY < 307) {
 
-     console.log("HOLAAA");
-
     //desaparecer el cuadro de pregunta 
+
+    student1.question1Called = false;
+
     //pintar la siguiente pregunta
     //sumar puntaje correspondiente si es la respuesta correcta
 
@@ -589,14 +881,22 @@ function mousePressed() {
   if (mouseX > 527 && mouseY > 285 && mouseX < 594 && mouseY < 307) {
 
     //desaparecer el cuadro de pregunta
+
+    student1.question1Called = false;
+
     //pintar la siguiente pregunta
     //sumar puntaje correspondiente si es la respuesta correcta
+
+    score += 100;
   }
 
   //respuesta C
   if (mouseX > 620 && mouseY > 285 && mouseX < 687 && mouseY < 307) {
 
     //desaparecer el cuadro de pregunta
+
+    student1.question1Called = false;
+
     //pintar la siguiente pregunta
     //sumar puntaje correspondiente si es la respuesta correcta
   }
@@ -605,10 +905,14 @@ function mousePressed() {
   if (mouseX > 715 && mouseY > 285 && mouseX < 780 && mouseY < 307) {
 
     //desaparecer el cuadro de pregunta
+
+    student1.question1Called = false;
+
     //pintar la siguiente pregunta
     //sumar puntaje correspondiente si es la respuesta correcta
   }
 
+  }
 
 
 
