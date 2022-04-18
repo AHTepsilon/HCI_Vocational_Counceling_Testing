@@ -24,6 +24,8 @@ let screenPic1, screenPic2, screenPic3, screenPic4, screenPic5, screenPic6;
 
 let screen;
 
+let madTimer;
+
 let studentsArr;
 
 let phaseNum;
@@ -50,46 +52,46 @@ let questionBooleanArr;
 
 function preload() {
 
-  screenPic1 = loadImage(path + "./img/screen1.png");
-  screenPic2 = loadImage(path + "./img/screen2.png");
-  screenPic3 = loadImage(path + "./img/screen3.png");
-  screenPic4 = loadImage(path + "./img/screen4.png");
-  screenPic5 = loadImage(path + "./img/screen5.png");
+  screenPic1 = app.loadImage(path + "./img/screen1.png");
+  screenPic2 = app.loadImage(path + "./img/screen2.png");
+  screenPic3 = app.loadImage(path + "./img/screen3.png");
+  screenPic4 = app.loadImage(path + "./img/screen4.png");
+  screenPic5 = app.loadImage(path + "./img/screen5.png");
   //screenPic6 = loadImage("./img/screen6.png");
 
 
   //preguntas pics
 
-  q1 = loadImage(path + "./img/question1.png");
-  q2 = loadImage(path + "./img/question2.png");
-  q3 = loadImage(path + "./img/question3.png");
-  q4 = loadImage(path + "./img/question4.png");
-  q5 = loadImage(path + "./img/question5.png");
-  q6 = loadImage(path + "./img/question6.png");
-  q7 = loadImage(path + "./img/question7.png");
-  q8 = loadImage(path + "./img/question8.png");
-  q9 = loadImage(path + "./img/question9.png");
-  q10 = loadImage(path + "./img/question10.png");
-  q11 = loadImage(path + "./img/question11.png");
-  q12 = loadImage(path + "./img/question12.png");
-  q13 = loadImage(path + "./img/question13.png");
-  q14 = loadImage(path + "./img/question14.png");
-  q15 = loadImage(path + "./img/question15.png");
-  q16 = loadImage(path + "./img/question16.png");
-  q17 = loadImage(path + "./img/question17.png");
-  q18 = loadImage(path + "./img/question18.png");
-  q19 = loadImage(path + "./img/question19.png");
-  q20 = loadImage(path + "./img/question20.png");
-  q21 = loadImage(path + "./img/question21.png");
-  q22 = loadImage(path + "./img/question22.png");
+  q1 = app.loadImage(path + "./img/question1.png");
+  q2 = app.loadImage(path + "./img/question2.png");
+  q3 = app.loadImage(path + "./img/question3.png");
+  q4 = app.loadImage(path + "./img/question4.png");
+  q5 = app.loadImage(path + "./img/question5.png");
+  q6 = app.loadImage(path + "./img/question6.png");
+  q7 = app.loadImage(path + "./img/question7.png");
+  q8 = app.loadImage(path + "./img/question8.png");
+  q9 = app.loadImage(path + "./img/question9.png");
+  q10 = app.loadImage(path + "./img/question10.png");
+  q11 = app.loadImage(path + "./img/question11.png");
+  q12 = app.loadImage(path + "./img/question12.png");
+  q13 = app.loadImage(path + "./img/question13.png");
+  q14 = app.loadImage(path + "./img/question14.png");
+  q15 = app.loadImage(path + "./img/question15.png");
+  q16 = app.loadImage(path + "./img/question16.png");
+  q17 = app.loadImage(path + "./img/question17.png");
+  q18 = app.loadImage(path + "./img/question18.png");
+  q19 = app.loadImage(path + "./img/question19.png");
+  q20 = app.loadImage(path + "./img/question20.png");
+  q21 = app.loadImage(path + "./img/question21.png");
+  q22 = app.loadImage(path + "./img/question22.png");
  
 
-  bg = loadImage("./img/bg.png");
-  desk = loadImage("./img/desk.png");
+  bg = app.loadImage("./img/bg.png");
+  desk = app.loadImage("./img/desk.png");
 }
 
 function setup() {
-  gameCanvas = createCanvas(1280, 720);
+  gameCanvas = app.createCanvas(1280, 720);
 
   gameCanvas.parent("gameContainer");
 
@@ -186,7 +188,7 @@ function draw() {
   app.background(255);
   //console.log(mouseX + ", " + mouseY);
   //console.log(frameCount);
-  console.log(questionCounter + ", " + score + ", " + q1C);
+  //console.log(questionCounter + ", " + score + ", " + q1C);
   //console.log(score);
   //console.log(questionBooleanArr);
 
@@ -376,16 +378,17 @@ function draw() {
     }
 
 
-    imageMode(CORNER);
-    image(desk, 5, 531);
+    app.imageMode(CORNER);
+    app.image(desk, 5, 531);
 
-    whatQuestion();
-    addScore();
+    app.whatQuestion();
+    app.addScore();
+    //app.copeSeetheMald();
+    
+    app.timer();
+    app.endGame();
 
-    timer();
-    endGame();
-
-    changePhase();
+    app.changePhase();
 
   }
 
@@ -542,15 +545,33 @@ function addScore(){
 
 }
 
+function copeSeetheMald(){
+
+  studentsArr.forEach(stud =>{
+
+    if(stud.calledTeacher){
+
+      madTimer = setInterval((ev) =>{
+
+        stud.isMad = true;
+
+      }, 5000);
+
+    }
+
+  });
+
+}
+
 function timer() {
-  textSize(30);
-  textAlign(CENTER);
+  app.textSize(30);
+  app.textAlign(CENTER);
 
   if (timerValue >= 10) {
-    text(timerValueMinutes + ":" + timerValue, 145, 660);
+    app.text(timerValueMinutes + ":" + timerValue, 145, 660);
   }
   if (timerValue < 10) {
-    text(timerValueMinutes + ":0" + timerValue, 145, 660);
+    app.text(timerValueMinutes + ":0" + timerValue, 145, 660);
   }
   if (timerValue < 0) {
     timerValue = 59;
@@ -580,7 +601,10 @@ function changePhase() {
 
 function endGame() {
   if (timerValue == 0 && timerValueMinutes == 0) {
-    alert("Juego terminado");
+    
+    actividad.addResult([{id:NameCarrera, value:score}]);
+
+    actividad.finish()
 
   }
 }
@@ -1405,8 +1429,5 @@ if (mouseX > 715 && mouseY > 285 && mouseX < 780 && mouseY < 307) {
 }
 
 function keyPressed() {
-  //DEBUG
-  if (keyCode === UP_ARROW) {
-    student1.posX++;
-  }
+
 }
