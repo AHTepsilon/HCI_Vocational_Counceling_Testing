@@ -681,7 +681,6 @@ function mousePressed() {
         console.log(stud + " clicked");
 
         stud.calledTeacher = false;
-        stud.getHappy();
 
         timerValue--;
 
