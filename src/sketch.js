@@ -257,38 +257,24 @@ function draw() {
 
       }
 
-      if(timerValue == 38){ //pregunta 3
+      if(timerValue == 32){ //pregunta 3
 
         student4.calledTeacher = true; //student 4 question 1
         questionCounter = 3;
 
       }
 
-      if(timerValue == 30){ //pregunta 4
+      if(timerValue == 21){ //pregunta 4
 
         student1.calledTeacher = true; //student 1 question 2
         questionCounter = 4;
 
       }
 
-      if(timerValue == 22){ //pregunta 5
+      if(timerValue == 10){ //pregunta 5
 
         student5.calledTeacher = true; //student 5 question 1
         questionCounter = 5;
-
-      }
-
-      if(timerValue == 15){ //pregunta 6
-
-        student3.calledTeacher = true; //student 3 question 1
-        questionCounter = 6;
-
-      }
-
-      if(timerValue == 5){ //pregunta 7
-
-        student2.calledTeacher = true; //student 2 question 2
-        questionCounter = 7;
 
       }
 
@@ -298,57 +284,45 @@ function draw() {
 
       if(timerValue == 58){ //pregunta 8
 
+        student3.calledTeacher = true; //student 3 question 1
+        questionCounter = 6;
+
+      }
+
+      if(timerValue == 46){ //pregunta 9
+
+        student2.calledTeacher = true; //student 2 question 2
+        questionCounter = 7;
+
+      }
+
+      if(timerValue == 37){ //pregunta 10
+
         student5.calledTeacher = true; //student 5 question 2
         questionCounter = 8;
 
       }
 
-      if(timerValue == 50){ //pregunta 9
+      if(timerValue == 27){ //pregunta 11
 
+        
         student6.calledTeacher = true; //student 6 question 1
         questionCounter = 9;
 
       }
 
-      if(timerValue == 40){ //pregunta 10
-
+      if(timerValue == 18){ //pregunta 12
+        
         student2.calledTeacher = true; //student 2 question 3
         questionCounter = 10;
 
       }
 
-      if(timerValue == 31){ //pregunta 11
+      if(timerValue == 9){ //pregunta 13
 
+        
         student4.calledTeacher = true; //student 4 question 2
         questionCounter = 11;
-
-      }
-
-      if(timerValue == 25){ //pregunta 12
-
-        student3.calledTeacher = true; //student 3 question 2
-        questionCounter = 12;
-
-      }
-
-      if(timerValue == 16){ //pregunta 13
-
-        student6.calledTeacher = true; //student 6 question 2
-        questionCounter = 13;
-
-      }
-
-      if(timerValue == 10){ //pregunta 14
-
-        student4.calledTeacher = true; //student 4 question 3
-        questionCounter = 14;
-
-      }
-
-      if(timerValue == 1){ //pregunta 15
-
-        student1.calledTeacher = true; //student 1 question 3
-        questionCounter = 15;
 
       }
 
@@ -358,50 +332,44 @@ function draw() {
 
       if(timerValue == 56){ //pregunta 16
 
-        student5.calledTeacher = true; //student 5 question 3
-        questionCounter = 16;
+        student3.calledTeacher = true; //student 3 question 2
+        questionCounter = 12;
 
       }
 
       if(timerValue == 49){ //pregunta 17
 
-        student3.calledTeacher = true; //student 3 question 3
-        questionCounter = 17;
+        student6.calledTeacher = true; //student 6 question 2
+        questionCounter = 13;
+
 
       }
 
       if(timerValue == 38){ //pregunta 18
 
-        student4.calledTeacher = true; //student 4 question 4
-        questionCounter = 18;
+        student4.question14Called = true;
+        questionCounter = 14;
 
       }
 
       if(timerValue == 30){ //pregunta 19
 
-        student6.calledTeacher = true; //student 6 question 3
-        questionCounter = 19;
+        student1.question15Called = true;
+        questionCounter = 15;
 
       }
 
       if(timerValue == 24){ //pregunta 20
 
-        student1.calledTeacher = true; //student 1 question 4
-        questionCounter = 20;
+        student5.calledTeacher = true; //student 5 question 3
+        questionCounter = 16;
 
       }
 
-      if(timerValue == 18){ //pregunta 21
-      
-        student3.calledTeacher = true; //student 3 question 4
-        questionCounter = 21;
-      
-      }
-
-      if(timerValue == 10){ //pregunta 22
-
-        student2.calledTeacher = true; //student 2 question 4
-        questionCounter = 22;
+      if(timerValue == 10){ //pregunta 21
+    
+        student3.calledTeacher = true; //student 3 question 3
+        questionCounter = 17;
 
       }
 
@@ -858,9 +826,13 @@ function mousePressed() {
   //pregunta 8 (B)
   //pregunta 9 (B)
   //pregunta 10 (A)
-  //pregunta 11 (C)
+  //pregunta 11 (B)
   //pregunta 12 (C)
   //pregunta 13 (A)
+  //pregunta 14 (B)
+  //pregunta 15 (D)
+  //pregunta 16 (C)
+  //pregunta 17 (A)
 
   
   if(student1.question1Called){
@@ -1226,14 +1198,14 @@ if (mouseX > 432 && mouseY > 285 && mouseX < 499 && mouseY < 307) {
 if (mouseX > 527 && mouseY > 285 && mouseX < 594 && mouseY < 307) {
 
   student4.question11Called = false;
-
+  score += 100;
 }
 
 //respuesta C
 if (mouseX > 620 && mouseY > 285 && mouseX < 687 && mouseY < 307) {
 
   student4.question11Called = false;
-  score += 100;
+
 }
 
 //respuesta D
@@ -1302,6 +1274,130 @@ if (mouseX > 620 && mouseY > 285 && mouseX < 687 && mouseY < 307) {
 if (mouseX > 715 && mouseY > 285 && mouseX < 780 && mouseY < 307) {
 
   student6.question13Called = false;
+}
+
+}
+
+else if(student4.question14Called){
+
+  //respuesta A
+if (mouseX > 432 && mouseY > 285 && mouseX < 499 && mouseY < 307) {
+
+  student4.question14Called = false;
+
+}
+
+//respuesta B
+if (mouseX > 527 && mouseY > 285 && mouseX < 594 && mouseY < 307) {
+
+  student4.question14Called = false;
+  score += 100;
+}
+
+//respuesta C
+if (mouseX > 620 && mouseY > 285 && mouseX < 687 && mouseY < 307) {
+
+  student4.question14Called = false;
+
+}
+
+//respuesta D
+if (mouseX > 715 && mouseY > 285 && mouseX < 780 && mouseY < 307) {
+
+  student4.question14Called = false;
+}
+
+}
+
+else if(student1.question15Called){
+
+  //respuesta A
+if (mouseX > 432 && mouseY > 285 && mouseX < 499 && mouseY < 307) {
+
+  student1.question15Called = false;
+
+}
+
+//respuesta B
+if (mouseX > 527 && mouseY > 285 && mouseX < 594 && mouseY < 307) {
+
+  student1.question15Called = false;
+
+}
+
+//respuesta C
+if (mouseX > 620 && mouseY > 285 && mouseX < 687 && mouseY < 307) {
+
+  student1.question15Called = false;
+
+}
+
+//respuesta D
+if (mouseX > 715 && mouseY > 285 && mouseX < 780 && mouseY < 307) {
+
+  student1.question15Called = false;
+  score += 100;
+}
+
+}
+
+else if(student5.question16Called){
+
+  //respuesta A
+if (mouseX > 432 && mouseY > 285 && mouseX < 499 && mouseY < 307) {
+
+  student5.question16Called = false;
+
+}
+
+//respuesta B
+if (mouseX > 527 && mouseY > 285 && mouseX < 594 && mouseY < 307) {
+
+  student5.question16Called = false;
+
+}
+
+//respuesta C
+if (mouseX > 620 && mouseY > 285 && mouseX < 687 && mouseY < 307) {
+
+  student5.question16Called = false;
+  score += 100;
+}
+
+//respuesta D
+if (mouseX > 715 && mouseY > 285 && mouseX < 780 && mouseY < 307) {
+
+  student5.question16Called = false;
+}
+
+}
+
+else if(student3.question17Called){
+
+  //respuesta A
+if (mouseX > 432 && mouseY > 285 && mouseX < 499 && mouseY < 307) {
+
+  student3.question17Called = false;
+  score += 100;
+}
+
+//respuesta B
+if (mouseX > 527 && mouseY > 285 && mouseX < 594 && mouseY < 307) {
+
+  student3.question17Called = false;
+
+}
+
+//respuesta C
+if (mouseX > 620 && mouseY > 285 && mouseX < 687 && mouseY < 307) {
+
+  student3.question17Called = false;
+}
+
+//respuesta D
+if (mouseX > 715 && mouseY > 285 && mouseX < 780 && mouseY < 307) {
+
+  student3.question17Called = false;
 }
 
 }
