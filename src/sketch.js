@@ -24,6 +24,8 @@ let screenPic1, screenPic2, screenPic3, screenPic4, screenPic5, screenPic6;
 
 let screen;
 
+let madTimer;
+
 let studentsArr;
 
 let phaseNum;
@@ -186,7 +188,7 @@ function draw() {
   app.background(255);
   //console.log(mouseX + ", " + mouseY);
   //console.log(frameCount);
-  console.log(questionCounter + ", " + score + ", " + q1C);
+  //console.log(questionCounter + ", " + score + ", " + q1C);
   //console.log(score);
   //console.log(questionBooleanArr);
 
@@ -381,7 +383,8 @@ function draw() {
 
     app.whatQuestion();
     app.addScore();
-
+    //app.copeSeetheMald();
+    
     app.timer();
     app.endGame();
 
@@ -542,6 +545,24 @@ function addScore(){
 
 }
 
+function copeSeetheMald(){
+
+  studentsArr.forEach(stud =>{
+
+    if(stud.calledTeacher){
+
+      madTimer = setInterval((ev) =>{
+
+        stud.isMad = true;
+
+      }, 5000);
+
+    }
+
+  });
+
+}
+
 function timer() {
   app.textSize(30);
   app.textAlign(CENTER);
@@ -580,7 +601,10 @@ function changePhase() {
 
 function endGame() {
   if (timerValue == 0 && timerValueMinutes == 0) {
-    app.alert("Juego terminado");
+    
+    actividad.addResult([{id:NameCarrera, value:score}]);
+
+    actividad.finish()
 
   }
 }
@@ -657,6 +681,7 @@ function mousePressed() {
         console.log(stud + " clicked");
 
         stud.calledTeacher = false;
+        stud.getHappy();
 
         timerValue--;
 

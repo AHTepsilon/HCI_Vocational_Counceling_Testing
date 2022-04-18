@@ -6,6 +6,8 @@ class Student1 extends Student {
 
         this.sprite = loadImage("./img/student1.png");
 
+        this.madSprite = loadImage("./img/student1mad.png");
+
         this.question1 = loadImage("./img/question1.png");
 
         this.question4 = loadImage("./img/question4.png");
@@ -22,12 +24,20 @@ class Student1 extends Student {
 
         this.question20Called = false;
 
+        this.isMad = false;
+
     }
 
     paint() {
 
         imageMode(CENTER);
-        image(this.sprite, this.posX, this.posY);
+
+        if(!this.isMad){
+            image(this.sprite, this.posX, this.posY);
+        }
+        else{
+            image(this.madSprite, this.posX, this.posY);
+        }
 
         if(this.question1Called){
 
@@ -52,6 +62,20 @@ class Student1 extends Student {
             image(this.question20, 608, 330);
 
         }
+
+    }
+
+    getMad(){
+        
+        this.isMad = true;
+
+        console.log("mad");
+
+    }
+
+    getHappy(){
+
+        this.isMad = false;
 
     }
 

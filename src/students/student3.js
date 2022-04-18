@@ -5,6 +5,8 @@ class Student3 extends Student{
         super(posX, posY);
 
         this.sprite = loadImage("./img/student3.png");
+        
+        this.madSprite = loadImage("./img/student3mad.png");
 
         this.question6 = loadImage("./img/question6.png");
 
@@ -22,12 +24,20 @@ class Student3 extends Student{
 
         this.question21Called = false;
 
+        this.isMad = false;
+
     }
 
     paint(){
 
         imageMode(CENTER);
-        image(this.sprite, this.posX, this.posY);
+                
+        if(!this.isMad){
+            image(this.sprite, this.posX, this.posY);
+        }
+        else{
+            image(this.madSprite, this.posX, this.posY);
+        }
 
         if(this.question6Called){
 
