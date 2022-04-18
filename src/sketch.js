@@ -875,6 +875,8 @@ function mousePressed() {
     //pintar la siguiente pregunta
     //sumar puntaje correspondiente si es la respuesta correcta
 
+    score += 100;
+
   }
 
   //respuesta B
@@ -886,8 +888,6 @@ function mousePressed() {
 
     //pintar la siguiente pregunta
     //sumar puntaje correspondiente si es la respuesta correcta
-
-    score += 100;
   }
 
   //respuesta C
@@ -914,7 +914,397 @@ function mousePressed() {
 
   }
 
+else if(student2.question2Called){
 
+    //respuesta A
+if (mouseX > 432 && mouseY > 285 && mouseX < 499 && mouseY < 307) {
+
+  //desaparecer el cuadro de pregunta 
+
+  student2.question2Called = false;
+
+  //pintar la siguiente pregunta
+  //sumar puntaje correspondiente si es la respuesta correcta
+
+  score += 100;
+
+}
+
+//respuesta B
+if (mouseX > 527 && mouseY > 285 && mouseX < 594 && mouseY < 307) {
+
+  //desaparecer el cuadro de pregunta
+
+  student2.question2Called = false;
+
+  //pintar la siguiente pregunta
+  //sumar puntaje correspondiente si es la respuesta correcta
+}
+
+//respuesta C
+if (mouseX > 620 && mouseY > 285 && mouseX < 687 && mouseY < 307) {
+
+  //desaparecer el cuadro de pregunta
+
+  student2.question2Called = false;
+
+  //pintar la siguiente pregunta
+  //sumar puntaje correspondiente si es la respuesta correcta
+}
+
+//respuesta D
+if (mouseX > 715 && mouseY > 285 && mouseX < 780 && mouseY < 307) {
+
+  //desaparecer el cuadro de pregunta
+
+  student2.question2Called = false;
+
+  //pintar la siguiente pregunta
+  //sumar puntaje correspondiente si es la respuesta correcta
+}
+
+}
+
+else if(student4.question3Called){
+
+    //respuesta A
+  if (mouseX > 432 && mouseY > 285 && mouseX < 499 && mouseY < 307) {
+
+  student4.question3Called = false;
+
+  }
+
+  //respuesta B
+  if (mouseX > 527 && mouseY > 285 && mouseX < 594 && mouseY < 307) {
+
+  student4.question3Called = false;
+
+  }
+
+  //respuesta C
+  if (mouseX > 620 && mouseY > 285 && mouseX < 687 && mouseY < 307) {
+
+  student4.question3Called = false;
+  score += 100;
+  }
+
+  //respuesta D
+  if (mouseX > 715 && mouseY > 285 && mouseX < 780 && mouseY < 307) {
+
+  student4.question3Called = false;
+  }
+
+}
+
+else if(student1.question4Called){
+
+    //respuesta A
+  if (mouseX > 432 && mouseY > 285 && mouseX < 499 && mouseY < 307) {
+
+    student1.question4Called = false;
+
+  }
+
+  //respuesta B
+  if (mouseX > 527 && mouseY > 285 && mouseX < 594 && mouseY < 307) {
+
+    student1.question4Called = false;
+
+  }
+
+  //respuesta C
+  if (mouseX > 620 && mouseY > 285 && mouseX < 687 && mouseY < 307) {
+
+    student1.question4Called = false;
+    score += 100;
+  }
+
+  //respuesta D
+  if (mouseX > 715 && mouseY > 285 && mouseX < 780 && mouseY < 307) {
+
+    student1.question4Called = false;
+  }
+
+}
+
+else if(student5.question5Called){
+
+    //respuesta A
+  if (mouseX > 432 && mouseY > 285 && mouseX < 499 && mouseY < 307) {
+
+    student5.question5Called = false;
+    score += 100;
+  }
+
+  //respuesta B
+  if (mouseX > 527 && mouseY > 285 && mouseX < 594 && mouseY < 307) {
+
+    student5.question5Called = false;
+
+  }
+
+  //respuesta C
+  if (mouseX > 620 && mouseY > 285 && mouseX < 687 && mouseY < 307) {
+
+    student5.question5Called = false;
+
+  }
+
+  //respuesta D
+  if (mouseX > 715 && mouseY > 285 && mouseX < 780 && mouseY < 307) {
+
+    student5.question5Called = false;
+  }
+
+}
+
+else if(student3.question6Called){
+
+    //respuesta A
+  if (mouseX > 432 && mouseY > 285 && mouseX < 499 && mouseY < 307) {
+
+    student3.question6Called = false;
+    score += 100;
+  }
+
+  //respuesta B
+  if (mouseX > 527 && mouseY > 285 && mouseX < 594 && mouseY < 307) {
+
+    student3.question6Called = false;
+
+  }
+
+  //respuesta C
+  if (mouseX > 620 && mouseY > 285 && mouseX < 687 && mouseY < 307) {
+
+    student3.question6Called = false;
+
+  }
+
+  //respuesta D
+  if (mouseX > 715 && mouseY > 285 && mouseX < 780 && mouseY < 307) {
+
+    student3.question6Called = false;
+  }
+
+}
+
+else if(student2.question7Called){
+
+    //respuesta A
+  if (mouseX > 432 && mouseY > 285 && mouseX < 499 && mouseY < 307) {
+
+    student2.question7Called = false;
+
+  }
+
+  //respuesta B
+  if (mouseX > 527 && mouseY > 285 && mouseX < 594 && mouseY < 307) {
+
+    student2.question7Called = false;
+    score += 100;
+  }
+
+  //respuesta C
+  if (mouseX > 620 && mouseY > 285 && mouseX < 687 && mouseY < 307) {
+
+    student2.question7Called = false;
+
+  }
+
+  //respuesta D
+  if (mouseX > 715 && mouseY > 285 && mouseX < 780 && mouseY < 307) {
+
+    student2.question7Called = false;
+  }
+
+}
+
+else if(student5.question8Called){
+
+    //respuesta A
+  if (mouseX > 432 && mouseY > 285 && mouseX < 499 && mouseY < 307) {
+
+    student5.question8Called = false;
+
+  }
+
+  //respuesta B
+  if (mouseX > 527 && mouseY > 285 && mouseX < 594 && mouseY < 307) {
+
+    student5.question8Called = false;
+    score += 100;
+  }
+
+  //respuesta C
+  if (mouseX > 620 && mouseY > 285 && mouseX < 687 && mouseY < 307) {
+
+    student5.question8Called = false;
+
+  }
+
+  //respuesta D
+  if (mouseX > 715 && mouseY > 285 && mouseX < 780 && mouseY < 307) {
+
+    student5.question8Called = false;
+  }
+
+}
+
+else if(student6.question9Called){
+
+    //respuesta A
+  if (mouseX > 432 && mouseY > 285 && mouseX < 499 && mouseY < 307) {
+
+    student6.question9Called = false;
+
+  }
+
+  //respuesta B
+  if (mouseX > 527 && mouseY > 285 && mouseX < 594 && mouseY < 307) {
+
+    student6.question9Called = false;
+    score += 100;
+  }
+
+  //respuesta C
+  if (mouseX > 620 && mouseY > 285 && mouseX < 687 && mouseY < 307) {
+
+    student6.question9Called = false;
+
+  }
+
+  //respuesta D
+  if (mouseX > 715 && mouseY > 285 && mouseX < 780 && mouseY < 307) {
+
+    student6.question9Called = false;
+  }
+
+}
+
+else if(student2.question10Called){
+
+  //respuesta A
+if (mouseX > 432 && mouseY > 285 && mouseX < 499 && mouseY < 307) {
+
+  student2.question10Called = false;
+  score += 100;
+}
+
+//respuesta B
+if (mouseX > 527 && mouseY > 285 && mouseX < 594 && mouseY < 307) {
+
+  student2.question10Called = false;
+
+}
+
+//respuesta C
+if (mouseX > 620 && mouseY > 285 && mouseX < 687 && mouseY < 307) {
+
+  student2.question10Called = false;
+
+}
+
+//respuesta D
+if (mouseX > 715 && mouseY > 285 && mouseX < 780 && mouseY < 307) {
+
+  student2.question10Called = false;
+}
+
+}
+
+else if(student4.question11Called){
+
+  //respuesta A
+if (mouseX > 432 && mouseY > 285 && mouseX < 499 && mouseY < 307) {
+
+  student4.question11Called = false;
+
+}
+
+//respuesta B
+if (mouseX > 527 && mouseY > 285 && mouseX < 594 && mouseY < 307) {
+
+  student4.question11Called = false;
+
+}
+
+//respuesta C
+if (mouseX > 620 && mouseY > 285 && mouseX < 687 && mouseY < 307) {
+
+  student4.question11Called = false;
+  score += 100;
+}
+
+//respuesta D
+if (mouseX > 715 && mouseY > 285 && mouseX < 780 && mouseY < 307) {
+
+  student4.question11Called = false;
+}
+
+}
+
+else if(student3.question12Called){
+
+  //respuesta A
+if (mouseX > 432 && mouseY > 285 && mouseX < 499 && mouseY < 307) {
+
+  student3.question12Called = false;
+
+}
+
+//respuesta B
+if (mouseX > 527 && mouseY > 285 && mouseX < 594 && mouseY < 307) {
+
+  student3.question12Called = false;
+
+}
+
+//respuesta C
+if (mouseX > 620 && mouseY > 285 && mouseX < 687 && mouseY < 307) {
+
+  student3.question12Called = false;
+  score += 100;
+}
+
+//respuesta D
+if (mouseX > 715 && mouseY > 285 && mouseX < 780 && mouseY < 307) {
+
+  student3.question12Called = false;
+}
+
+}
+
+else if(student6.question13Called){
+
+  //respuesta A
+if (mouseX > 432 && mouseY > 285 && mouseX < 499 && mouseY < 307) {
+
+  student6.question13Called = false;
+
+}
+
+//respuesta B
+if (mouseX > 527 && mouseY > 285 && mouseX < 594 && mouseY < 307) {
+
+  student6.question13Called = false;
+
+}
+
+//respuesta C
+if (mouseX > 620 && mouseY > 285 && mouseX < 687 && mouseY < 307) {
+
+  student6.question13Called = false;
+  score += 100;
+}
+
+//respuesta D
+if (mouseX > 715 && mouseY > 285 && mouseX < 780 && mouseY < 307) {
+
+  student6.question13Called = false;
+}
+
+}
 
 }
 
