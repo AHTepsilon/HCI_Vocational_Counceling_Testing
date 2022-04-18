@@ -16,6 +16,12 @@ let timerValue, timerValueMinutes;
 
 let gameCanvas;
 
+let questionCounter; //contador de pregunta
+
+let q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18, q19, q20, q21, q22;
+
+let q1C, q2C, q3C, q4C, q5C, q6C, q7C, q8C, q9C, q10C, q11C, q12C, q13C, q14C, q15C, q16C, q17C, q18C, q19C, q20C, q21C, q22C; //booleanos para definir si la pregunta es :) o :(
+
 function preload() {
 
   screenPic1 = loadImage("./img/screen1.png");
@@ -28,19 +34,29 @@ function preload() {
 
   //preguntas pics
 
-  /*questionOne = loadImage("./img/question1.png");
-  questionTwo = loadImage("./img/question2.png");
-  questionThree = loadImage("./img/question3.png");
-  questionFour = loadImage("./img/question4.png");
-  questionFive = loadImage("./img/question5.png");
-  questionSix = loadImage("./img/question6.png");
-  questionSeven = loadImage("./img/question7.png");
-  questionEight = loadImage("./img/question8.png");
-  questionNine = loadImage("./img/question9.png");
-  questionTen = loadImage("./img/question10.png");
-  questionEleven = loadImage("./img/question11.png");
-  questionTwelve = loadImage("./img/question12.png");
- */
+  q1 = loadImage("./img/question1.png");
+  q2 = loadImage("./img/question2.png");
+  q3 = loadImage("./img/question3.png");
+  q4 = loadImage("./img/question4.png");
+  q5 = loadImage("./img/question5.png");
+  q6 = loadImage("./img/question6.png");
+  q7 = loadImage("./img/question7.png");
+  q8 = loadImage("./img/question8.png");
+  q9 = loadImage("./img/question9.png");
+  q10 = loadImage("./img/question10.png");
+  q11 = loadImage("./img/question11.png");
+  q12 = loadImage("./img/question12.png");
+  q13 = loadImage("./img/question13.png");
+  q14 = loadImage("./img/question14.png");
+  q15 = loadImage("./img/question15.png");
+  q16 = loadImage("./img/question16.png");
+  q17 = loadImage("./img/question17.png");
+  q18 = loadImage("./img/question18.png");
+  q19 = loadImage("./img/question19.png");
+  q20 = loadImage("./img/question20.png");
+  q21 = loadImage("./img/question21.png");
+  q22 = loadImage("./img/question22.png");
+ 
 
   bg = loadImage("./img/bg.png");
   desk = loadImage("./img/desk.png");
@@ -199,7 +215,7 @@ function draw() {
 
       }
 
-      else if(timerValue == 5){
+      else if(timerValue == 5){ //pregunta 7
 
         student2.calledTeacher = true;
 
@@ -207,11 +223,104 @@ function draw() {
 
     }
 
-    else if(timerValueMinutes == 1){
+    else if(timerValueMinutes == 1){ 
 
+      if(timerValue == 58){ //pregunta 8
 
+        student5.calledTeacher = true;
+
+      }
+
+      else if(timerValue == 50){ //pregunta 9
+
+        student6.calledTeacher = true;
+
+      }
+
+      else if(timerValue == 40){ //pregunta 10
+
+        student2.calledTeacher = true;
+
+      }
+
+      else if(timerValue == 31){ //pregunta 11
+
+        student4.calledTeacher = true;
+
+      }
+
+      else if(timerValue == 25){ //pregunta 12
+
+        student3.calledTeacher = true;
+
+      }
+
+      else if(timerValue == 16){ //pregunta 13
+
+        student6.calledTeacher = true;
+
+      }
+
+      else if(timerValue == 10){ //pregunta 14
+
+        student4.calledTeacher = true;
+
+      }
+
+      else if(timerValue == 1){ //pregunta 15
+
+        student1.calledTeacher = true;
+
+      }
 
     }
+
+    else if(timerValueMinutes == 0){ 
+
+      if(timerValue == 56){ //pregunta 16
+
+        student5.calledTeacher = true;
+
+      }
+
+      else if(timerValue == 49){ //pregunta 17
+
+        student3.calledTeacher = true;
+
+      }
+
+      else if(timerValue == 38){ //pregunta 18
+
+        student4.calledTeacher = true;
+
+      }
+
+      else if(timerValue == 30){ //pregunta 19
+
+        student6.calledTeacher = true;
+
+      }
+
+      else if(timerValue == 24){ //pregunta 20
+
+        student1.calledTeacher = true;
+
+      }
+
+      else if(timerValue == 18){ //pregunta 21
+      
+        student3.calledTeacher = true;
+      
+      }
+
+      else if(timerValue == 10){ //pregunta 22
+
+        student2.calledTeacher = true;
+
+      }
+
+    }
+
 
     imageMode(CORNER);
     image(desk, 5, 531);
