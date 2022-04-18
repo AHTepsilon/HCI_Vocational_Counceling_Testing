@@ -1,3 +1,21 @@
+let NameCarrera = "Licenciatura en Idiomas"; // poner el nombre de la carrera;
+
+let path = ""; //crear la variable path, se deja vacia, Se añade al lado de cada ruta de las imagenes o fuentes;
+
+//nunito = app.loadFont(path+'fonts/nunito-bold.ttf'); //ejemplo
+
+let app = this; // crear la variable de la siguiente forma y agregarla a cada metodos
+//app.loadFont //ejemplo
+
+let actividad; // crear la variable actividad
+
+//metodos a añadir
+
+//actividad.addResult([{id:NameCarrera, value:puntaje}]); // guarda el puntaje total de la interaccion en la app
+//actividad.addState("parametro", value); // guarda variables extras que deseen analizar para la interaccion
+//actividad.addState("pantalla1", pantalla1Time); // ejemplo
+//actividad.finish() // se pone donde acaba la interaccion, esta salta directamente a la pantalla siguiente, para que tengan en cuenta por si tienen una pantalla final que deseen que se muestre durante cierto tiempo
+
 let student1, student2, student3, student4, student5, student6;
 let timeout_phase1, timeout2_phase1, timeout3_phase1, timeout4_phase1, timeout5_phase1;
 let timeout_phase2, timeout2_phase2, timeout3_phase2, timeout4_phase2, timeout5_phase2;
@@ -18,44 +36,48 @@ let gameCanvas;
 
 let questionCounter; //contador de pregunta
 
+let score;
+
 let q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18, q19, q20, q21, q22;
 
 let q1C, q2C, q3C, q4C, q5C, q6C, q7C, q8C, q9C, q10C, q11C, q12C, q13C, q14C, q15C, q16C, q17C, q18C, q19C, q20C, q21C, q22C; //booleanos para definir si la pregunta es :) o :(
 
+let questionBooleanArr;
+
 function preload() {
 
-  screenPic1 = loadImage("./img/screen1.png");
-  screenPic2 = loadImage("./img/screen2.png");
-  screenPic3 = loadImage("./img/screen3.png");
-  screenPic4 = loadImage("./img/screen4.png");
-  screenPic5 = loadImage("./img/screen5.png");
+  screenPic1 = loadImage(path + "./img/screen1.png");
+  screenPic2 = loadImage(path + "./img/screen2.png");
+  screenPic3 = loadImage(path + "./img/screen3.png");
+  screenPic4 = loadImage(path + "./img/screen4.png");
+  screenPic5 = loadImage(path + "./img/screen5.png");
   //screenPic6 = loadImage("./img/screen6.png");
 
 
   //preguntas pics
 
-  q1 = loadImage("./img/question1.png");
-  q2 = loadImage("./img/question2.png");
-  q3 = loadImage("./img/question3.png");
-  q4 = loadImage("./img/question4.png");
-  q5 = loadImage("./img/question5.png");
-  q6 = loadImage("./img/question6.png");
-  q7 = loadImage("./img/question7.png");
-  q8 = loadImage("./img/question8.png");
-  q9 = loadImage("./img/question9.png");
-  q10 = loadImage("./img/question10.png");
-  q11 = loadImage("./img/question11.png");
-  q12 = loadImage("./img/question12.png");
-  q13 = loadImage("./img/question13.png");
-  q14 = loadImage("./img/question14.png");
-  q15 = loadImage("./img/question15.png");
-  q16 = loadImage("./img/question16.png");
-  q17 = loadImage("./img/question17.png");
-  q18 = loadImage("./img/question18.png");
-  q19 = loadImage("./img/question19.png");
-  q20 = loadImage("./img/question20.png");
-  q21 = loadImage("./img/question21.png");
-  q22 = loadImage("./img/question22.png");
+  q1 = loadImage(path + "./img/question1.png");
+  q2 = loadImage(path + "./img/question2.png");
+  q3 = loadImage(path + "./img/question3.png");
+  q4 = loadImage(path + "./img/question4.png");
+  q5 = loadImage(path + "./img/question5.png");
+  q6 = loadImage(path + "./img/question6.png");
+  q7 = loadImage(path + "./img/question7.png");
+  q8 = loadImage(path + "./img/question8.png");
+  q9 = loadImage(path + "./img/question9.png");
+  q10 = loadImage(path + "./img/question10.png");
+  q11 = loadImage(path + "./img/question11.png");
+  q12 = loadImage(path + "./img/question12.png");
+  q13 = loadImage(path + "./img/question13.png");
+  q14 = loadImage(path + "./img/question14.png");
+  q15 = loadImage(path + "./img/question15.png");
+  q16 = loadImage(path + "./img/question16.png");
+  q17 = loadImage(path + "./img/question17.png");
+  q18 = loadImage(path + "./img/question18.png");
+  q19 = loadImage(path + "./img/question19.png");
+  q20 = loadImage(path + "./img/question20.png");
+  q21 = loadImage(path + "./img/question21.png");
+  q22 = loadImage(path + "./img/question22.png");
  
 
   bg = loadImage("./img/bg.png");
@@ -69,6 +91,8 @@ function setup() {
 
   phaseNum = 0;
   screen = 0;
+  questionCounter = 0;
+  score = 0;
 
   student1 = new Student1(258, 174);
   student2 = new Student2(202, 351);
@@ -79,12 +103,20 @@ function setup() {
 
   studentsArr = [student1, student2, student3, student4, student5, student6];
 
+  questionBooleanArr = [q1C, q2C, q3C, q4C, q5C, q6C, q7C, q8C, q9C, q10C, q11C, q12C, q13C, q14C, q15C, q16C, q17C, q18C, q19C, q20C, q21C, q22C];
+
+  questionBooleanArr.forEach(quest =>{
+
+    quest = false;
+
+  });
+
   console.log(studentsArr);
 
   timerValue = 0;
   timerValueMinutes = 3;
 
-  setInterval(timeIt, 1000);
+  app.setInterval(timeIt, 1000);
 
   //if(screen === 6){
   /*timeout = setInterval((ev) => {
@@ -116,42 +148,45 @@ function setup() {
   if(screen == 5){
   
   }
+
 }
 
 function draw() {
 
-  imageMode(CORNER);
-  background(255);
+  app.imageMode(CORNER);
+  app.background(255);
   //console.log(mouseX + ", " + mouseY);
-  console.log(frameCount);
+  //console.log(frameCount);
+  console.log(questionCounter + ", " + score + ", " + q1C);
+  console.log(score);
 
   if (screen === 0) {
 
-    image(screenPic1, 0, 0);
+    app.image(screenPic1, 0, 0);
 
   }
 
   else if (screen === 1) {
 
-    image(screenPic2, 0, 0);
+    app.image(screenPic2, 0, 0);
 
   }
 
   else if (screen === 2) {
 
-    image(screenPic3, 0, 0);
+    app.image(screenPic3, 0, 0);
 
   }
 
   else if (screen === 3) {
 
-    image(screenPic4, 0, 0);
+    app.image(screenPic4, 0, 0);
 
   }
 
   else if (screen === 4) {
 
-    image(screenPic5, 0, 0);
+    app.image(screenPic5, 0, 0);
 
   }
 
@@ -163,7 +198,7 @@ function draw() {
 
   else if (screen === 5) {
 
-    image(bg, 0, 0);
+    app.image(bg, 0, 0);
 
 
     studentsArr.forEach((stud) => {
@@ -185,37 +220,37 @@ function draw() {
 
       }
 
-      else if(timerValue == 46){ //pregunta 2
+      if(timerValue == 46){ //pregunta 2
 
         student2.calledTeacher = true;
 
       }
 
-      else if(timerValue == 38){ //pregunta 3
+      if(timerValue == 38){ //pregunta 3
 
         student4.calledTeacher = true;
 
       }
 
-      else if(timerValue == 30){ //pregunta 4
+      if(timerValue == 30){ //pregunta 4
 
         student1.calledTeacher = true;
 
       }
 
-      else if(timerValue == 22){ //pregunta 5
+      if(timerValue == 22){ //pregunta 5
 
         student5.calledTeacher = true;
 
       }
 
-      else if(timerValue == 15){ //pregunta 6
+      if(timerValue == 15){ //pregunta 6
 
         student3.calledTeacher = true;
 
       }
 
-      else if(timerValue == 5){ //pregunta 7
+      if(timerValue == 5){ //pregunta 7
 
         student2.calledTeacher = true;
 
@@ -231,43 +266,43 @@ function draw() {
 
       }
 
-      else if(timerValue == 50){ //pregunta 9
+      if(timerValue == 50){ //pregunta 9
 
         student6.calledTeacher = true;
 
       }
 
-      else if(timerValue == 40){ //pregunta 10
+      if(timerValue == 40){ //pregunta 10
 
         student2.calledTeacher = true;
 
       }
 
-      else if(timerValue == 31){ //pregunta 11
+      if(timerValue == 31){ //pregunta 11
 
         student4.calledTeacher = true;
 
       }
 
-      else if(timerValue == 25){ //pregunta 12
+      if(timerValue == 25){ //pregunta 12
 
         student3.calledTeacher = true;
 
       }
 
-      else if(timerValue == 16){ //pregunta 13
+      if(timerValue == 16){ //pregunta 13
 
         student6.calledTeacher = true;
 
       }
 
-      else if(timerValue == 10){ //pregunta 14
+      if(timerValue == 10){ //pregunta 14
 
         student4.calledTeacher = true;
 
       }
 
-      else if(timerValue == 1){ //pregunta 15
+      if(timerValue == 1){ //pregunta 15
 
         student1.calledTeacher = true;
 
@@ -283,37 +318,37 @@ function draw() {
 
       }
 
-      else if(timerValue == 49){ //pregunta 17
+      if(timerValue == 49){ //pregunta 17
 
         student3.calledTeacher = true;
 
       }
 
-      else if(timerValue == 38){ //pregunta 18
+      if(timerValue == 38){ //pregunta 18
 
         student4.calledTeacher = true;
 
       }
 
-      else if(timerValue == 30){ //pregunta 19
+      if(timerValue == 30){ //pregunta 19
 
         student6.calledTeacher = true;
 
       }
 
-      else if(timerValue == 24){ //pregunta 20
+      if(timerValue == 24){ //pregunta 20
 
         student1.calledTeacher = true;
 
       }
 
-      else if(timerValue == 18){ //pregunta 21
+      if(timerValue == 18){ //pregunta 21
       
         student3.calledTeacher = true;
       
       }
 
-      else if(timerValue == 10){ //pregunta 22
+      if(timerValue == 10){ //pregunta 22
 
         student2.calledTeacher = true;
 
@@ -325,6 +360,9 @@ function draw() {
     imageMode(CORNER);
     image(desk, 5, 531);
 
+    whatQuestion();
+    addScore();
+
     timer();
     endGame();
 
@@ -332,6 +370,50 @@ function draw() {
 
   }
 
+
+}
+
+function whatQuestion(){
+
+  studentsArr.forEach(stud => {
+
+    if(stud.calledTeacher){
+
+        if(questionCounter == 1){
+
+          q1C = true;
+
+        }
+
+      }
+
+    });
+
+}
+
+function addScore(){
+  
+  /*questionBooleanArr.forEach(quest =>{
+
+    if(quest){
+
+      score += 100;
+      
+    }
+
+  });*/
+
+  if(q1C){
+
+    score += 1;
+
+  }
+
+  if(q2C){
+
+    score += 1;
+
+  }
 
 }
 
@@ -465,6 +547,7 @@ function mousePressed() {
         stud.questionActive = false;
 
         timerValue++;
+        questionCounter++;
       }
 
     });
